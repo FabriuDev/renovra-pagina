@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renovra — Baños · Cocinas · Locales · Remodelaciones CABA y GBA</title>
+  <meta name="description" content="Remodelaciones reales en CABA y GBA. Baños, cocinas, locales y viviendas. Precio acordado, sin sorpresas, entrega prolija." />
+  <meta property="og:title" content="Renovra — Remodelaciones reales CABA y GBA" />
+  <meta property="og:description" content="Baños, cocinas, locales. Oficio real, precio acordado, entrega prolija." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/logo_renovra_sin_fondo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,800;1,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Renovra","telephone":"+5491144101670","email":"Leogueva1972@gmail.com","areaServed":["Ciudad Autónoma de Buenos Aires","Gran Buenos Aires"],"priceRange":"$$"}</script>
+  <style>
+    :root {
+      --bg:    #070B14; --card:  #0C1220; --blue: #1B4FD8;
+      --bdim:  rgba(27,79,216,0.15); --bb: rgba(27,79,216,0.28);
+      --y:     #F4B400; --ydim: rgba(244,180,0,0.11); --yglow: rgba(244,180,0,0.4);
+      --white: #EDF1FF; --muted: #7585A6; --faint: #38475E;
+      --bord:  rgba(255,255,255,0.055); --bmd: rgba(255,255,255,0.10);
+      --sh:    0 28px 72px rgba(0,0,0,0.72); --shsm: 0 4px 24px rgba(0,0,0,0.5);
+      --r: 14px; --rl: 22px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+      background-image:linear-gradient(rgba(27,79,216,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(27,79,216,.028) 1px,transparent 1px);
+      background-size:64px 64px}
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.022;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size:180px}
+
+    .wrap{max-width:1280px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+
+    /* ── INTRO OVERLAY ── */
+    .site-intro{
+      position:fixed;inset:0;z-index:9999;background:var(--bg);
+      display:flex;align-items:center;justify-content:center;flex-direction:column;
+    }
+    .site-intro.out{animation:intro-out .55s ease forwards}
+    @keyframes intro-out{to{opacity:0;visibility:hidden;pointer-events:none}}
+    .intro-inner{display:flex;flex-direction:column;align-items:center;gap:0;
+      animation:intro-rise .8s cubic-bezier(.16,1,.3,1) .1s both}
+    @keyframes intro-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    .intro-logo-row{display:flex;align-items:center;gap:14px}
+    .intro-logo-img{width:52px;height:52px;filter:drop-shadow(0 0 22px rgba(244,180,0,.65))}
+    .intro-word{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.2rem;
+      letter-spacing:.12em;text-transform:uppercase}
+    .intro-word span{color:var(--y)}
+    .intro-sub{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.36em;
+      color:var(--muted);margin-top:10px;animation:intro-fade .5s ease .65s both}
+    @keyframes intro-fade{from{opacity:0}to{opacity:1}}
+    .intro-bar{width:0;height:2px;
+      background:linear-gradient(90deg,transparent,var(--y),transparent);
+      margin-top:16px;animation:intro-bar .6s ease .45s both}
+    @keyframes intro-bar{from{width:0}to{width:110px}}
+
+    /* ── HERO ENTRANCE ── */
+    .h-e{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+    .h-er{opacity:0;transform:translateX(32px);transition:opacity .68s ease,transform .68s ease}
+    .h-e.in,.h-er.in{opacity:1;transform:none}
+
+    /* ── NAV ── */
+    nav{position:sticky;top:0;z-index:200;background:rgba(7,11,20,.96);
+      backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);
+      border-bottom:1px solid rgba(27,79,216,.18);transition:border-color .3s,box-shadow .3s}
+    nav.scrolled{border-bottom-color:rgba(244,180,0,.22);
+      box-shadow:0 1px 0 rgba(244,180,0,.06),0 8px 32px rgba(0,0,0,.5)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;
+      gap:16px;padding:12px 28px;flex-wrap:wrap;max-width:1280px;margin:0 auto}
+    .nav-brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+    .nav-logo{width:34px;height:34px;border-radius:8px;object-fit:contain;
+      filter:drop-shadow(0 0 10px rgba(244,180,0,.4))}
+    .nav-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.42rem;
+      letter-spacing:.1em;text-transform:uppercase}
+    .nav-name span{color:var(--y)}
+    .nav-tag{font-size:.57rem;color:var(--muted);letter-spacing:.1em;margin-top:-2px;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{font-size:.82rem;font-weight:500;color:var(--muted);padding:8px 12px;
+      border-radius:999px;transition:color .2s,background .2s;white-space:nowrap}
+    .nav-links a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+    .nav-wa{display:flex!important;align-items:center;gap:7px;background:#25D366!important;
+      color:#000!important;font-weight:700!important;font-size:.82rem;padding:9px 16px;
+      border-radius:999px;transition:transform .2s,box-shadow .2s;
+      box-shadow:0 4px 18px rgba(37,211,102,.32)}
+    .nav-wa:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(37,211,102,.48)}
+    .nav-wa svg{width:14px;height:14px;flex-shrink:0}
+    .nav-ham{display:none;flex-direction:column;justify-content:center;gap:5px;
+      width:40px;height:40px;background:none;border:1px solid var(--bmd);
+      border-radius:10px;cursor:pointer;padding:10px;flex-shrink:0}
+    .nav-ham span{display:block;width:100%;height:2px;background:var(--white);
+      border-radius:2px;transition:all .25s}
+    .nav-ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-ham.open span:nth-child(2){opacity:0}
+    .nav-ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      padding:15px 28px;border-radius:999px;border:none;cursor:pointer;
+      font:inherit;font-weight:700;font-size:.94rem;letter-spacing:.02em;
+      transition:transform .22s,box-shadow .22s;text-align:center}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-y{background:var(--y);color:#070B14;box-shadow:0 10px 36px rgba(244,180,0,.3)}
+    .btn-y:hover{box-shadow:0 18px 52px rgba(244,180,0,.52)}
+    .btn-ghost{background:rgba(255,255,255,.05);color:var(--white);border:1px solid var(--bmd)}
+    .btn-ghost:hover{background:rgba(255,255,255,.10)}
+    .btn-lg{padding:18px 36px;font-size:1rem}
+
+    /* ── HERO ── */
+    .hero{min-height:96vh;display:grid;align-items:center;padding:96px 0 80px;overflow:hidden;position:relative}
+    .hero-bg{position:absolute;inset:0;z-index:0;
+      background:radial-gradient(ellipse 90% 70% at 72% 36%,rgba(27,79,216,.18) 0%,transparent 60%),
+        radial-gradient(ellipse 55% 45% at 16% 80%,rgba(244,180,0,.09) 0%,transparent 55%),
+        radial-gradient(ellipse 40% 35% at 50% 0%,rgba(27,79,216,.08) 0%,transparent 70%)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+    .kicker{display:flex;align-items:center;gap:13px;font-size:.66rem;font-weight:700;
+      text-transform:uppercase;letter-spacing:.32em;color:var(--y);margin-bottom:20px}
+    .kicker::before{content:'';display:block;width:34px;height:2px;background:var(--y);
+      flex-shrink:0;box-shadow:0 0 14px var(--yglow)}
+    .hero-h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;
+      font-size:clamp(2.8rem,5.6vw,5.6rem);line-height:.88;text-transform:uppercase;letter-spacing:-.01em}
+    .hero-h1 em{font-style:italic;color:var(--y)}
+    .hero-sub{margin-top:22px;color:var(--muted);font-size:.96rem;line-height:1.85;max-width:480px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+    .hero-proof{display:flex;align-items:center;gap:12px;margin-top:24px}
+    .hp-avatars{display:flex}
+    .hp-av{width:30px;height:30px;border-radius:50%;flex-shrink:0;border:2px solid var(--bg);
+      display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.7rem;
+      font-family:'Barlow Condensed',sans-serif;color:#fff;margin-right:-8px}
+    .hp-av:last-child{margin-right:0}
+    .hp-text{font-size:.74rem;color:var(--muted);line-height:1.5;padding-left:10px}
+    .hp-text strong{color:var(--white);font-weight:600}
+
+    .hc-wrap{position:relative;border-radius:var(--rl);overflow:hidden;
+      aspect-ratio:4/5;max-height:580px;border:1px solid rgba(27,79,216,.28);
+      box-shadow:var(--sh),0 0 80px rgba(244,180,0,.07),0 0 0 1px rgba(244,180,0,.07)}
+    .hc-slide{position:absolute;inset:0;background-size:cover;background-position:center;
+      opacity:0;transition:opacity 1.2s ease}
+    .hc-slide.on{opacity:1;animation:kb 12s ease-in-out forwards}
+    @keyframes kb{from{transform:scale(1.06)}to{transform:scale(1)}}
+    .hc-overlay{position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(to top,rgba(7,11,20,.7) 0%,rgba(7,11,20,.1) 42%,transparent 100%)}
+    .hc-corner{position:absolute;bottom:18px;left:18px;z-index:3;
+      background:rgba(7,11,20,.82);backdrop-filter:blur(14px);
+      border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:10px 14px;max-width:200px}
+    .hc-corner-kicker{font-size:.57rem;font-weight:700;text-transform:uppercase;
+      letter-spacing:.22em;color:var(--y);margin-bottom:3px}
+    .hc-corner-title{font-size:.77rem;font-weight:600;color:var(--white);line-height:1.3}
+    .hc-dots{position:absolute;bottom:20px;right:16px;z-index:3;display:flex;gap:6px}
+    .hc-dot{height:6px;border-radius:3px;background:rgba(255,255,255,.24);border:none;
+      cursor:pointer;transition:background .35s,width .35s;width:6px;padding:0}
+    .hc-dot.on{background:var(--y);width:20px}
+
+    /* ── STATS ── */
+    .stats-strip{background:linear-gradient(135deg,#0A1220,#0E1A32);
+      border-top:1px solid rgba(244,180,0,.1);border-bottom:1px solid rgba(27,79,216,.22);
+      padding:44px 0;position:relative;overflow:hidden}
+    .stats-strip::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+      width:500px;height:1px;background:linear-gradient(90deg,transparent,rgba(244,180,0,.25),transparent)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat-item{text-align:center;padding:0 16px;border-right:1px solid rgba(255,255,255,.06)}
+    .stat-item:last-child{border-right:none}
+    .stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.2rem;
+      line-height:1;color:var(--y);text-shadow:0 0 52px rgba(244,180,0,.4)}
+    .stat-label{font-size:.72rem;font-weight:600;color:var(--muted);margin-top:6px;
+      text-transform:uppercase;letter-spacing:.12em}
+
+    /* ── SECTION BASE ── */
+    section{padding:80px 0}
+    .s-kicker{font-size:.63rem;font-weight:700;text-transform:uppercase;
+      letter-spacing:.32em;color:var(--y);margin-bottom:11px}
+    .s-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;
+      font-size:clamp(1.9rem,4vw,3.1rem);text-transform:uppercase;
+      letter-spacing:.02em;line-height:.92;margin-bottom:14px}
+    .s-sub{color:var(--muted);font-size:.94rem;line-height:1.88;max-width:620px;margin-bottom:38px}
+    .s-head{margin-bottom:42px}
+    .c-head{display:flex;align-items:flex-end;justify-content:space-between;
+      gap:16px;margin-bottom:26px;flex-wrap:wrap}
+    .c-controls{display:flex;gap:10px;flex-shrink:0}
+    .c-btn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(27,79,216,.35);
+      background:rgba(27,79,216,.1);color:var(--white);cursor:pointer;
+      display:flex;align-items:center;justify-content:center;font-size:1rem;
+      transition:background .22s,transform .22s,border-color .22s}
+    .c-btn:hover{background:rgba(27,79,216,.32);transform:scale(1.08);border-color:rgba(27,79,216,.65)}
+    .c-btn:disabled{opacity:.3;cursor:default;transform:none}
+
+    /* ── SERVICIOS con foto ── */
+    #servicios{background:linear-gradient(180deg,var(--bg),#060A13 60%,var(--bg))}
+    .svc-photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .svc-ph{position:relative;border-radius:var(--r);overflow:hidden;
+      aspect-ratio:4/5;border:1px solid var(--bord);cursor:default}
+    .svc-ph-bg{position:absolute;inset:0;background-size:cover;background-position:center;
+      transition:transform .6s ease}
+    .svc-ph:hover .svc-ph-bg{transform:scale(1.06)}
+    .svc-ph-ov{position:absolute;inset:0;padding:22px;
+      background:linear-gradient(to top,rgba(7,11,20,.97) 0%,rgba(7,11,20,.5) 50%,rgba(7,11,20,.08) 100%);
+      display:flex;flex-direction:column;justify-content:flex-end;
+      transition:background .4s}
+    .svc-ph:hover .svc-ph-ov{background:linear-gradient(to top,rgba(7,11,20,1) 0%,rgba(7,11,20,.7) 55%,rgba(7,11,20,.22) 100%)}
+    .svc-ph-icon{font-size:1.5rem;margin-bottom:8px}
+    .svc-ph-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.22rem;
+      text-transform:uppercase;letter-spacing:.06em}
+    .svc-ph-desc{color:rgba(237,241,255,.68);font-size:.81rem;line-height:1.62;
+      max-height:0;overflow:hidden;opacity:0;margin-top:0;
+      transition:max-height .38s ease,opacity .38s ease,margin-top .38s ease}
+    .svc-ph:hover .svc-ph-desc{max-height:90px;opacity:1;margin-top:8px}
+    .svc-badge{position:absolute;top:14px;right:14px;background:rgba(244,180,0,.94);
+      color:#070B14;font-size:.6rem;font-weight:700;text-transform:uppercase;
+      letter-spacing:.1em;padding:4px 10px;border-radius:999px;z-index:3;pointer-events:none}
+
+    /* ── ANTES / DESPUÉS ── */
+    #antes-despues{background:linear-gradient(180deg,#060A13,var(--bg) 60%,#060A13)}
+    .ad-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+    .ad-item{grid-column:span 2;border-radius:var(--rl);overflow:hidden;
+      background:var(--card);border:1px solid var(--bord);box-shadow:var(--shsm)}
+    .ad-item:nth-child(4){grid-column:2 / span 2}
+    .ad-item:nth-child(5){grid-column:4 / span 2}
+    .ad-compare{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;user-select:none}
+    .ad-before,.ad-after{position:absolute;inset:0;background-size:cover;background-position:center}
+    .ad-before{clip-path:inset(0 50% 0 0)}
+    .ad-divider{position:absolute;top:0;bottom:0;left:50%;width:2px;
+      background:rgba(255,255,255,.88);transform:translateX(-50%);z-index:3;pointer-events:none}
+    .ad-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      z-index:4;width:44px;height:44px;border-radius:50%;background:#fff;
+      box-shadow:0 4px 20px rgba(0,0,0,.55);display:flex;align-items:center;
+      justify-content:center;pointer-events:none}
+    .ad-handle svg{width:20px;height:20px}
+    .ad-label-b,.ad-label-a{position:absolute;bottom:12px;z-index:5;padding:4px 11px;
+      border-radius:999px;font-size:.67rem;font-weight:700;text-transform:uppercase;
+      letter-spacing:.1em;pointer-events:none}
+    .ad-label-b{left:12px;background:rgba(7,11,20,.84);color:var(--muted);border:1px solid rgba(255,255,255,.1)}
+    .ad-label-a{right:12px;background:var(--y);color:#000}
+    .ad-info{padding:18px 22px 22px}
+    .ad-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.08rem;
+      text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+    .ad-meta{color:var(--muted);font-size:.82rem;line-height:1.55}
+    .ad-tag{display:inline-block;margin-top:9px;padding:3px 11px;background:var(--ydim);
+      border:1px solid rgba(244,180,0,.2);border-radius:999px;font-size:.67rem;
+      font-weight:700;color:var(--y);text-transform:uppercase;letter-spacing:.1em}
+
+    /* ── EQUIPO ── */
+    #equipo{background:linear-gradient(180deg,var(--bg),#060A13)}
+    .eq-header{text-align:center;margin-bottom:44px}
+    .eq-facts{display:flex;gap:16px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+    .eq-facts span{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;
+      color:var(--muted);border:1px solid var(--bord);border-radius:999px;padding:7px 18px;
+      transition:border-color .25s,color .25s}
+    .eq-facts span:hover{border-color:rgba(244,180,0,.3);color:var(--white)}
+    .equipo-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:10px}
+    .eq-item{border-radius:var(--r);overflow:hidden;position:relative}
+    .eq-big{grid-column:span 2}
+    .eq-img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;transition:transform .55s ease}
+    .eq-big .eq-img{aspect-ratio:16/9}
+    .eq-item:hover .eq-img{transform:scale(1.05)}
+    .eq-tagline{text-align:center;color:var(--muted);font-size:.94rem;line-height:1.88;
+      max-width:460px;margin:32px auto 0}
+
+    /* ── CARD accent (portfolio) ── */
+    .c-card::before{content:'';display:block;height:2px;
+      background:linear-gradient(90deg,transparent,rgba(27,79,216,.4),transparent);
+      transition:background .3s}
+    .c-card:hover::before{background:linear-gradient(90deg,transparent,rgba(244,180,0,.45),transparent)}
+    .c-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.06rem;
+      text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+    .c-desc{color:var(--muted);font-size:.81rem;line-height:1.62}
+    .ad-item:hover{border-color:rgba(244,180,0,.2);box-shadow:0 14px 44px rgba(0,0,0,.6),0 0 0 1px rgba(244,180,0,.07)}
+
+    /* ── VIDEOS carousel ── */
+    #videos{background:linear-gradient(180deg,#060A13,var(--bg));overflow:hidden}
+    #videos .s-head{text-align:center}
+    .vid-rail{overflow:hidden;position:relative;padding:8px 0 6px;cursor:default}
+    .vid-rail::before,.vid-rail::after{content:'';position:absolute;top:0;bottom:0;
+      width:100px;z-index:3;pointer-events:none}
+    .vid-rail::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+    .vid-rail::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+    .vid-track{display:flex;will-change:transform}
+    .vid-c{width:220px;height:360px;flex-shrink:0;border-radius:var(--r);overflow:hidden;
+      position:relative;border:1px solid var(--bord);background:var(--card);
+      margin-right:14px;cursor:pointer;
+      transition:transform .35s ease,border-color .35s,box-shadow .35s}
+    .vid-c:hover{transform:scale(1.06);border-color:rgba(244,180,0,.4);
+      box-shadow:0 16px 48px rgba(0,0,0,.7),0 0 0 1px rgba(244,180,0,.12);z-index:5}
+    .vid-c video{width:100%;height:100%;object-fit:cover;display:block}
+    .vid-snd{position:absolute;bottom:10px;right:10px;z-index:4;
+      width:28px;height:28px;border-radius:50%;background:rgba(7,11,20,.76);
+      border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;
+      justify-content:center;opacity:0;transition:opacity .25s,border-color .25s,background .25s;
+      cursor:pointer;padding:0}
+    .vid-c:hover .vid-snd{opacity:1}
+    .vid-c.unmuted .vid-snd{opacity:1;border-color:rgba(244,180,0,.5);background:rgba(244,180,0,.2)}
+    .vid-snd svg{width:13px;height:13px;fill:var(--white)}
+
+    /* ── TRABAJOS carousel ── */
+    #trabajos{background:#060A13;padding:96px 0}
+    .trab-outer{overflow:hidden}
+    .trab-track{display:flex;transition:transform .52s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+    .c-slide{flex:none;padding:0 7px}
+    .c-card{border-radius:var(--r);overflow:hidden;background:var(--card);
+      border:1px solid var(--bord);transition:transform .3s,border-color .3s,box-shadow .3s}
+    .c-card:hover{transform:translateY(-5px);border-color:rgba(244,180,0,.22);
+      box-shadow:0 20px 52px rgba(0,0,0,.65)}
+    .c-img-wrap{overflow:hidden}
+    .c-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .42s ease}
+    .c-card:hover .c-img{transform:scale(1.05)}
+    .c-body{padding:16px 18px 20px}
+    .c-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.02rem;
+      text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+    .c-desc{color:var(--muted);font-size:.82rem;line-height:1.6}
+    .trab-dots{display:flex;gap:7px}
+
+    /* ── TESTIMONIOS ── */
+    #testimonios{background:linear-gradient(180deg,#060A13,var(--bg))}
+    .test-outer{overflow:hidden}
+    .test-track{display:flex;transition:transform .52s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+    .test-slide{flex:none;padding:0 8px}
+    .test-card{background:var(--card);border:1px solid var(--bord);border-radius:var(--r);
+      padding:28px 24px 24px;box-shadow:var(--shsm);position:relative;overflow:hidden;height:100%;
+      transition:border-color .3s,box-shadow .3s}
+    .test-card:hover{border-color:rgba(244,180,0,.18);box-shadow:0 16px 52px rgba(0,0,0,.6)}
+    .test-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,transparent,rgba(27,79,216,.5),rgba(244,180,0,.3),transparent)}
+    .test-via{position:absolute;top:18px;right:18px;display:flex;align-items:center;gap:4px;
+      font-size:.57rem;font-weight:600;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
+    .test-via-g{width:11px;height:11px;display:flex;align-items:center;justify-content:center}
+    .test-stars{color:var(--y);font-size:.88rem;letter-spacing:2px;margin-bottom:16px}
+    .test-quote{color:rgba(237,241,255,.75);font-size:.88rem;line-height:1.84;
+      margin-bottom:22px;position:relative;padding-left:18px}
+    .test-quote::before{content:'"';position:absolute;left:0;top:-6px;font-size:2.8rem;
+      line-height:1;color:rgba(244,180,0,.22);font-family:Georgia,serif}
+    .test-author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--bord);padding-top:16px}
+    .test-avatar{width:42px;height:42px;border-radius:50%;flex-shrink:0;
+      border:2px solid rgba(244,180,0,.3);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:.92rem;font-family:'Barlow Condensed',sans-serif;color:#fff}
+    .test-name{font-weight:700;font-size:.87rem}
+    .test-detail{color:var(--muted);font-size:.71rem;margin-top:2px}
+    .test-dots{display:flex;gap:7px}
+    .test-dot{width:7px;height:7px;border-radius:4px;background:rgba(255,255,255,.15);
+      border:none;cursor:pointer;transition:background .28s,width .28s;padding:0}
+    .test-dot.on{background:var(--y);width:22px}
+
+    /* ── FAQ ── */
+    #faq{background:linear-gradient(180deg,var(--bg),#060A13)}
+    #faq .s-head{text-align:center}
+    .faq-list{display:flex;flex-direction:column;gap:8px;max-width:780px;margin:0 auto}
+    .faq-item{background:var(--card);border:1px solid var(--bord);border-radius:var(--r);
+      overflow:hidden;transition:border-color .3s,box-shadow .3s}
+    .faq-item::before{content:'';display:block;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(27,79,216,.3),transparent);
+      transition:background .3s}
+    .faq-item.open{border-color:rgba(244,180,0,.28);box-shadow:0 6px 28px rgba(0,0,0,.38)}
+    .faq-item.open::before{background:linear-gradient(90deg,transparent,rgba(244,180,0,.32),transparent)}
+    .faq-q{width:100%;background:none;border:none;color:var(--white);padding:20px 22px;
+      text-align:left;cursor:pointer;font:inherit;font-weight:600;font-size:.95rem;line-height:1.45;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;transition:color .2s}
+    .faq-q:hover{color:var(--y)}
+    .faq-icon{width:28px;height:28px;border-radius:50%;border:1px solid rgba(244,180,0,.28);
+      background:rgba(244,180,0,.06);display:flex;align-items:center;justify-content:center;
+      font-size:1.05rem;flex-shrink:0;color:var(--y);transition:transform .32s,background .3s}
+    .faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(244,180,0,.14)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;
+      color:var(--muted);font-size:.88rem;line-height:1.82;padding:0 22px}
+    .faq-item.open .faq-a{max-height:260px;padding:2px 22px 20px}
+
+    /* ── FINAL CTA ── */
+    .final-cta{text-align:center;padding:110px 0;
+      background:linear-gradient(160deg,#0A1025,var(--bg) 65%);
+      border-top:1px solid rgba(27,79,216,.22);position:relative;overflow:hidden}
+    .final-cta::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);
+      width:600px;height:600px;border-radius:50%;
+      background:radial-gradient(circle,rgba(27,79,216,.13) 0%,transparent 70%);pointer-events:none}
+    .final-cta .s-title{font-size:clamp(2.2rem,4.8vw,3.8rem);max-width:18ch;margin:14px auto}
+    .final-cta p{color:var(--muted);max-width:520px;margin:0 auto 36px;line-height:1.85;font-size:.95rem}
+    .cta-note{margin-top:18px;font-size:.77rem;color:var(--faint)}
+    .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+    /* ── FOOTER ── */
+    footer{padding:44px 0 24px;border-top:1px solid var(--bord);
+      text-align:center;color:var(--muted);font-size:.82rem}
+    footer a{color:var(--muted);transition:color .2s}
+    footer a:hover{color:var(--y)}
+    .foot-brand{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;
+      letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:9px}
+    .foot-brand span{color:var(--y)}
+    .foot-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+
+    /* ── WA FLOAT ── */
+    .wa-float{position:fixed;bottom:24px;right:24px;z-index:300;width:58px;height:58px;
+      border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;
+      transition:transform .22s;animation:wa-pulse 3.4s infinite}
+    @keyframes wa-pulse{
+      0%{box-shadow:0 6px 26px rgba(37,211,102,.5),0 0 0 0 rgba(37,211,102,.35)}
+      70%{box-shadow:0 6px 26px rgba(37,211,102,.5),0 0 0 14px rgba(37,211,102,0)}
+      100%{box-shadow:0 6px 26px rgba(37,211,102,.5),0 0 0 0 rgba(37,211,102,0)}}
+    .wa-float:hover{transform:scale(1.12);animation:none;box-shadow:0 10px 40px rgba(37,211,102,.62)}
+    .wa-float svg{width:28px;height:28px;fill:#fff}
+
+    /* ── REVEAL ── */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+    .reveal.v{opacity:1;transform:translateY(0)}
+    .reveal-r{opacity:0;transform:translateX(32px);transition:opacity .8s ease,transform .8s ease}
+    .reveal-r.v{opacity:1;transform:translateX(0)}
+    .stagger>*{opacity:0;transform:translateY(22px);transition:opacity .72s ease,transform .72s ease}
+    .stagger.v>*{opacity:1;transform:translateY(0)}
+    .stagger.v>*:nth-child(1){transition-delay:.04s}
+    .stagger.v>*:nth-child(2){transition-delay:.09s}
+    .stagger.v>*:nth-child(3){transition-delay:.14s}
+    .stagger.v>*:nth-child(4){transition-delay:.19s}
+    .stagger.v>*:nth-child(5){transition-delay:.24s}
+    .stagger.v>*:nth-child(6){transition-delay:.29s}
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════ */
+    @media(max-width:1100px){
+      .hero-grid{grid-template-columns:1fr;gap:36px}
+      .hc-wrap{aspect-ratio:16/9;max-height:360px;order:-1}
+.equipo-intro{grid-template-columns:1fr;gap:22px}
+      .svc-photo-grid{grid-template-columns:repeat(2,1fr)}
+      .svc-ph{aspect-ratio:4/3}
+      .svc-ph-desc{max-height:90px;opacity:1;margin-top:8px}
+      .ad-grid{grid-template-columns:repeat(4,1fr)}
+      .ad-item{grid-column:span 2}
+      .ad-item:nth-child(4){grid-column:1/span 2}
+      .ad-item:nth-child(5){grid-column:2/span 2}
+    }
+    @media(max-width:900px){
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .stat-item:nth-child(2){border-right:none}
+      .stat-item:nth-child(1),.stat-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:20px}
+      .equipo-grid{grid-template-columns:repeat(2,1fr)}
+      .eq-big{grid-column:span 2}
+      .eq-big .eq-img{aspect-ratio:16/9}
+    }
+    @media(max-width:768px){
+      .wrap{padding:0 18px}
+      section{padding:56px 0}
+      #trabajos{padding:56px 0}
+      .nav-inner{padding:12px 18px}
+      .nav-ham{display:flex}
+      .nav-links{display:none;width:100%;order:3;flex-direction:column;gap:4px;
+        border-top:1px solid rgba(27,79,216,.15);padding:10px 0 6px}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 14px;border-radius:10px;font-size:.92rem;color:var(--white)}
+      .nav-wa{justify-content:center;margin-top:4px}
+      .hero{padding:70px 0 64px;min-height:90vh}
+      .hero-h1{font-size:clamp(2.5rem,10vw,3.8rem)}
+      .hero-sub{font-size:.91rem}
+      .hero-actions{flex-direction:column;gap:10px}
+      .hero-actions .btn{width:100%}
+      .hero-proof{flex-direction:column;align-items:flex-start;gap:8px}
+      .hc-wrap{max-height:240px}
+      .stats-strip{padding:30px 0}
+      .stat-num{font-size:2.6rem}
+      .s-head{margin-bottom:34px}
+      .s-sub{margin-bottom:34px;font-size:.88rem}
+      .svc-photo-grid{grid-template-columns:1fr;gap:12px}
+      .svc-ph{aspect-ratio:3/2}
+      .ad-grid{grid-template-columns:1fr;gap:16px}
+      .ad-item,.ad-item:nth-child(4),.ad-item:nth-child(5){grid-column:1}
+      .ad-compare{aspect-ratio:3/2}
+      .equipo-grid{grid-template-columns:1fr;gap:10px}
+      .eq-big{grid-column:1}
+      .eq-big .eq-img{aspect-ratio:4/3}
+      .vid-c{width:160px;height:270px}
+      .faq-q{padding:17px 18px;font-size:.91rem}
+      .faq-item.open .faq-a{padding:0 18px 17px}
+      .final-cta{padding:80px 0}
+      .cta-buttons{flex-direction:column;align-items:center;gap:10px}
+      .cta-buttons .btn{width:100%;max-width:340px}
+      .wa-float{width:52px;height:52px;bottom:18px;right:16px}
+      .wa-float svg{width:24px;height:24px}
+    }
+    @media(max-width:520px){
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .hero{min-height:85vh}
+      .hc-corner{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ INTRO ══ -->
+<div class="site-intro" id="site-intro">
+  <div class="intro-inner">
+    <div class="intro-logo-row">
+      <img class="intro-logo-img" src="assets/logo_renovra_sin_fondo.png" alt="Renovra">
+      <div class="intro-word">Renov<span>ra</span></div>
+    </div>
+    <div class="intro-sub">Baños · Cocinas · Locales · CABA y GBA</div>
+    <div class="intro-bar"></div>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img class="nav-logo" src="assets/logo_renovra_sin_fondo.png" alt="Renovra">
+      <div>
+        <div class="nav-name">Renov<span>ra</span></div>
+        <div class="nav-tag">Baños · Cocinas · Locales</div>
+      </div>
+    </div>
+    <button class="nav-ham" id="nav-ham" aria-label="Menú"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#antes-despues">Trabajos</a>
+      <a href="#testimonios">Clientes</a>
+      <a href="#faq">Preguntas</a>
+      <a class="nav-wa" href="https://wa.me/5491144101670?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20Renovra.%20Quisiera%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Contactar con Renovra
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker h-e" style="transition-delay:.05s">CABA y GBA · Equipo propio · 20 años en obra</div>
+        <h1 class="hero-h1 h-e" style="transition-delay:.13s">Renovamos tu baño,<br>cocina, casa<br><em>o local con las<br>últimas tendencias.</em></h1>
+        <p class="hero-sub h-e" style="transition-delay:.22s">Baños, cocinas, locales y viviendas. El precio que acordamos es el que pagás. Ni un peso más, ni una semana más de lo pautado.</p>
+        <div class="hero-actions h-e" style="transition-delay:.3s">
+          <a class="btn btn-y btn-lg" href="https://wa.me/5491144101670?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20Renovra.%20Quisiera%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Solicitar presupuesto
+          </a>
+          <a class="btn btn-ghost" href="#antes-despues">Ver trabajos hechos</a>
+        </div>
+        <div class="hero-proof h-e" style="transition-delay:.38s">
+          <div class="hp-avatars">
+            <div class="hp-av" style="background:linear-gradient(135deg,#1B4FD8,#3B82F6)">M</div>
+            <div class="hp-av" style="background:linear-gradient(135deg,#7C3AED,#9333EA)">R</div>
+            <div class="hp-av" style="background:linear-gradient(135deg,#059669,#10B981)">C</div>
+            <div class="hp-av" style="background:linear-gradient(135deg,#DC2626,#EF4444)">D</div>
+            <div class="hp-av" style="background:linear-gradient(135deg,#D97706,#F59E0B)">K</div>
+          </div>
+          <span class="hp-text">Más de 40 obras terminadas este año · <strong>Presupuesto sin costo</strong></span>
+        </div>
+      </div>
+      <div class="hc-wrap h-er" style="transition-delay:.1s">
+        <div class="hc-slide on"  style="background-image:url('assets/bano-despues.png')"></div>
+        <div class="hc-slide"     style="background-image:url('assets/cocina-despues.png');background-position:center 40%"></div>
+        <div class="hc-slide"     style="background-image:url('assets/local-despues.png')"></div>
+        <div class="hc-slide"     style="background-image:url('assets/fachada-despues.png')"></div>
+        <div class="hc-slide"     style="background-image:url('assets/patio-despues.png')"></div>
+        <div class="hc-overlay"></div>
+        <div class="hc-corner">
+          <div class="hc-corner-kicker" id="hc-kicker">Baño renovado</div>
+          <div class="hc-corner-title"  id="hc-title">Demolición total y terminaciones desde cero</div>
+        </div>
+        <div class="hc-dots">
+          <button class="hc-dot on" data-i="0"></button>
+          <button class="hc-dot"    data-i="1"></button>
+          <button class="hc-dot"    data-i="2"></button>
+          <button class="hc-dot"    data-i="3"></button>
+          <button class="hc-dot"    data-i="4"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div class="stats-strip">
+  <div class="wrap">
+    <div class="stats-grid stagger">
+      <div class="stat-item"><div class="stat-num"><span data-count="20" data-plus="true">+20</span></div><div class="stat-label">Años en obra</div></div>
+      <div class="stat-item"><div class="stat-num"><span data-count="100" data-suffix="%">100%</span></div><div class="stat-label">Obras a precio cerrado</div></div>
+      <div class="stat-item"><div class="stat-num"><span data-count="0">0</span></div><div class="stat-label">Costos que aparecen después</div></div>
+      <div class="stat-item"><div class="stat-num"><span data-count="1">1</span></div><div class="stat-label">Día para responderte</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SERVICIOS ══ -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-kicker">Lo que sabemos hacer</div>
+      <h2 class="s-title">Baños, cocinas y todo<br>lo que va con ellos</h2>
+      <p class="s-sub">De la demolición a la última mano de pintura. No subcontratamos ni mandamos gente que no conocés.</p>
+    </div>
+    <div class="svc-photo-grid stagger">
+      <div class="svc-ph">
+        <div class="svc-badge">3 a 4 semanas</div>
+        <div class="svc-ph-bg" style="background-image:url('assets/bano-despues.png')"></div>
+        <div class="svc-ph-ov">
+          <div class="svc-ph-icon">🚿</div>
+          <div class="svc-ph-name">Baños</div>
+          <p class="svc-ph-desc">Picamos, impermeabilizamos, hacemos plomería nueva y colocamos los revestimientos y sanitarios. Del azulejo a la canilla, lo hacemos entero.</p>
+        </div>
+      </div>
+      <div class="svc-ph">
+        <div class="svc-badge">3 a 4 semanas</div>
+        <div class="svc-ph-bg" style="background-image:url('assets/real-cocina-obra.jpg')"></div>
+        <div class="svc-ph-ov">
+          <div class="svc-ph-icon">🍳</div>
+          <div class="svc-ph-name">Cocinas</div>
+          <p class="svc-ph-desc">Mesada, muebles, revestimientos, gas y plomería. No vendemos lo que no podemos hacer, así que cuando decimos que queda bien, queda bien.</p>
+        </div>
+      </div>
+      <div class="svc-ph">
+        <div class="svc-badge">5 a 7 semanas</div>
+        <div class="svc-ph-bg" style="background-image:url('assets/local-despues.png')"></div>
+        <div class="svc-ph-ov">
+          <div class="svc-ph-icon">🏪</div>
+          <div class="svc-ph-name">Locales comerciales</div>
+          <p class="svc-ph-desc">Pisos, cielorraso, electricidad, paredes y pintura. Sabemos que el tiempo es plata para abrir, así que trabajamos con fecha de entrega real.</p>
+        </div>
+      </div>
+      <div class="svc-ph">
+        <div class="svc-badge">Según obra</div>
+        <div class="svc-ph-bg" style="background-image:url('assets/real-estructura-losa.jpg')"></div>
+        <div class="svc-ph-ov">
+          <div class="svc-ph-icon">🧱</div>
+          <div class="svc-ph-name">Albañilería</div>
+          <p class="svc-ph-desc">Muros, revoques, contrapisos, mampostería y losas. El trabajo pesado que pocos hacen prolijo. Lo hacemos con criterio, sin atajos.</p>
+        </div>
+      </div>
+      <div class="svc-ph">
+        <div class="svc-badge">Rápido</div>
+        <div class="svc-ph-bg" style="background-image:url('assets/real-plomeria-bano.jpg')"></div>
+        <div class="svc-ph-ov">
+          <div class="svc-ph-icon">🔧</div>
+          <div class="svc-ph-name">Plomería y electricidad</div>
+          <p class="svc-ph-desc">Instalaciones nuevas, reparaciones, tableros e iluminación. Diagnóstico real, solución real. Sin rodeos.</p>
+        </div>
+      </div>
+      <div class="svc-ph">
+        <div class="svc-badge">1 a 2 semanas</div>
+        <div class="svc-ph-bg" style="background-image:url('assets/pintura.jpg')"></div>
+        <div class="svc-ph-ov">
+          <div class="svc-ph-icon">🎨</div>
+          <div class="svc-ph-name">Pintura y terminaciones</div>
+          <p class="svc-ph-desc">Enduído, lija y pintura como corresponde. La preparación es lo que hace la diferencia. No pintamos encima de lo que hay que arreglar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ANTES Y DESPUÉS ══ -->
+<section id="antes-despues">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-kicker">Trabajos hechos</div>
+      <h2 class="s-title">Antes y después</h2>
+      <p class="s-sub">Arrastrá el divisor para ver el cambio real. Sin renders, sin fotos de stock.</p>
+    </div>
+    <div class="ad-grid stagger">
+      <div class="ad-item">
+        <div class="ad-compare" data-ad>
+          <div class="ad-after"  style="background-image:url('assets/bano-despues.png')"></div>
+          <div class="ad-before" style="background-image:url('assets/bano-antes.png')"></div>
+          <div class="ad-divider"></div>
+          <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
+        </div>
+        <div class="ad-info">
+          <div class="ad-title">Baño completo renovado</div>
+          <div class="ad-meta">Demolición total, impermeabilización, revestimientos y sanitarios desde cero.</div>
+          <span class="ad-tag">Villa Urquiza · 22 días</span>
+        </div>
+      </div>
+      <div class="ad-item">
+        <div class="ad-compare" data-ad>
+          <div class="ad-after"  style="background-image:url('assets/cocina-despues.png')"></div>
+          <div class="ad-before" style="background-image:url('assets/cocina-antes.png')"></div>
+          <div class="ad-divider"></div>
+          <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
+        </div>
+        <div class="ad-info">
+          <div class="ad-title">Cocina integral renovada</div>
+          <div class="ad-meta">Muebles nuevos, mesada, revestimientos, plomería y gas. Iluminación integrada.</div>
+          <span class="ad-tag">Caballito · 18 días</span>
+        </div>
+      </div>
+      <div class="ad-item">
+        <div class="ad-compare" data-ad>
+          <div class="ad-after"  style="background-image:url('assets/local-despues.png')"></div>
+          <div class="ad-before" style="background-image:url('assets/local-antes.png')"></div>
+          <div class="ad-divider"></div>
+          <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
+        </div>
+        <div class="ad-info">
+          <div class="ad-title">Local comercial renovado</div>
+          <div class="ad-meta">Piso, cielorraso, electricidad y pintura. Entregado en fecha para poder abrir.</div>
+          <span class="ad-tag">Palermo · 32 días</span>
+        </div>
+      </div>
+      <div class="ad-item">
+        <div class="ad-compare" data-ad>
+          <div class="ad-after"  style="background-image:url('assets/fachada-despues.png')"></div>
+          <div class="ad-before" style="background-image:url('assets/fachada-antes.png')"></div>
+          <div class="ad-divider"></div>
+          <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
+        </div>
+        <div class="ad-info">
+          <div class="ad-title">Fachada renovada completa</div>
+          <div class="ad-meta">Revoque fino, pintura exterior, carpintería nueva y jardín. El frente que cambia todo.</div>
+          <span class="ad-tag">San Isidro · 35 días</span>
+        </div>
+      </div>
+      <div class="ad-item">
+        <div class="ad-compare" data-ad>
+          <div class="ad-after"  style="background-image:url('assets/patio-despues.png')"></div>
+          <div class="ad-before" style="background-image:url('assets/patio-antes.png')"></div>
+          <div class="ad-divider"></div>
+          <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
+        </div>
+        <div class="ad-info">
+          <div class="ad-title">Patio con quincho construido</div>
+          <div class="ad-meta">Contrapiso, piso alisado, estructura de quincho y parrilla. Espacio que no existía.</div>
+          <span class="ad-tag">Lanús · 26 días</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EQUIPO ══ -->
+<section id="equipo">
+  <div class="wrap">
+    <div class="eq-header reveal">
+      <div class="s-kicker">El equipo</div>
+      <h2 class="s-title">Leonardo y su socio.<br>Sin intermediarios.</h2>
+      <div class="eq-facts">
+        <span>+20 años en obra</span>
+        <span>Equipo propio</span>
+        <span>Sin subcontratistas</span>
+        <span>CABA y GBA</span>
+      </div>
+    </div>
+    <div class="equipo-grid stagger">
+      <div class="eq-item eq-big">
+        <img class="eq-img" src="assets/real-equipo-losa.jpg" alt="Leonardo y su socio en obra" loading="lazy">
+      </div>
+      <div class="eq-item">
+        <img class="eq-img" src="assets/real-leo-vigas.jpg" alt="Trabajo en estructura de hormigón" loading="lazy">
+      </div>
+      <div class="eq-item">
+        <img class="eq-img" src="assets/real-equipo-angulo.jpg" alt="El equipo trabajando en sitio" loading="lazy">
+      </div>
+      <div class="eq-item">
+        <img class="eq-img" src="assets/real-obra-estructura.jpg" alt="Estructura y encofrado" loading="lazy">
+      </div>
+      <div class="eq-item">
+        <img class="eq-img" src="assets/real-fundacion.jpg" alt="Fundaciones y columnas" loading="lazy">
+      </div>
+    </div>
+    <p class="eq-tagline reveal">Conocemos cada proyecto de punta a punta. Cuando anotamos una fecha, la cumplimos.</p>
+  </div>
+</section>
+
+<!-- ══ VIDEOS ══ -->
+<section id="videos">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-kicker">La obra en vivo</div>
+      <h2 class="s-title">Así se ve el trabajo real</h2>
+      <p class="s-sub" style="margin-left:auto;margin-right:auto">Sin edición ni filtros. Lo que ves es lo que hacemos.</p>
+    </div>
+  </div>
+  <div class="vid-rail" id="vid-rail">
+    <div class="vid-track" id="vid-track">
+      <div class="vid-c" data-idx="0"><video src="assets/obra-video-1.mp4" muted playsinline loop preload="none"></video><button class="vid-snd" aria-label="Sonido"><svg class="v-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg><svg class="v-on" viewBox="0 0 24 24" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM19 12c0 3.04-1.73 5.68-4.26 6.99l1.42 1.42C19.12 18.87 21 15.64 21 12s-1.88-6.87-4.84-8.41L14.74 5c2.53 1.31 4.26 3.96 4.26 7z"/></svg></button></div>
+      <div class="vid-c" data-idx="1"><video src="assets/obra-video-2.mp4" muted playsinline loop preload="none"></video><button class="vid-snd" aria-label="Sonido"><svg class="v-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg><svg class="v-on" viewBox="0 0 24 24" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM19 12c0 3.04-1.73 5.68-4.26 6.99l1.42 1.42C19.12 18.87 21 15.64 21 12s-1.88-6.87-4.84-8.41L14.74 5c2.53 1.31 4.26 3.96 4.26 7z"/></svg></button></div>
+      <div class="vid-c" data-idx="2"><video src="assets/obra-video-3.mp4" muted playsinline loop preload="none"></video><button class="vid-snd" aria-label="Sonido"><svg class="v-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg><svg class="v-on" viewBox="0 0 24 24" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM19 12c0 3.04-1.73 5.68-4.26 6.99l1.42 1.42C19.12 18.87 21 15.64 21 12s-1.88-6.87-4.84-8.41L14.74 5c2.53 1.31 4.26 3.96 4.26 7z"/></svg></button></div>
+      <div class="vid-c" data-idx="3"><video src="assets/obra-video-4.mp4" muted playsinline loop preload="none"></video><button class="vid-snd" aria-label="Sonido"><svg class="v-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg><svg class="v-on" viewBox="0 0 24 24" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM19 12c0 3.04-1.73 5.68-4.26 6.99l1.42 1.42C19.12 18.87 21 15.64 21 12s-1.88-6.87-4.84-8.41L14.74 5c2.53 1.31 4.26 3.96 4.26 7z"/></svg></button></div>
+      <div class="vid-c" data-idx="4"><video src="assets/obra-video-5.mp4" muted playsinline loop preload="none"></video><button class="vid-snd" aria-label="Sonido"><svg class="v-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg><svg class="v-on" viewBox="0 0 24 24" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM19 12c0 3.04-1.73 5.68-4.26 6.99l1.42 1.42C19.12 18.87 21 15.64 21 12s-1.88-6.87-4.84-8.41L14.74 5c2.53 1.31 4.26 3.96 4.26 7z"/></svg></button></div>
+      <div class="vid-c" data-idx="5"><video src="assets/obra-video-6.mp4" muted playsinline loop preload="none"></video><button class="vid-snd" aria-label="Sonido"><svg class="v-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg><svg class="v-on" viewBox="0 0 24 24" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM19 12c0 3.04-1.73 5.68-4.26 6.99l1.42 1.42C19.12 18.87 21 15.64 21 12s-1.88-6.87-4.84-8.41L14.74 5c2.53 1.31 4.26 3.96 4.26 7z"/></svg></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRABAJOS ══ -->
+<div id="trabajos">
+  <div class="wrap">
+    <div class="c-head reveal">
+      <div>
+        <div class="s-kicker">Portfolio</div>
+        <h2 class="s-title" style="margin-bottom:0">Trabajos realizados</h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <div class="trab-dots" id="trab-dots"></div>
+        <div class="c-controls">
+          <button class="c-btn" id="trab-prev" aria-label="Anterior">←</button>
+          <button class="c-btn" id="trab-next" aria-label="Siguiente">→</button>
+        </div>
+      </div>
+    </div>
+    <div class="trab-outer">
+      <div class="trab-track" id="trab-track">
+        <div class="c-slide"><div class="c-card"><div class="c-img-wrap"><img class="c-img" src="assets/bano-despues.png" alt="Baño renovado" loading="lazy"></div><div class="c-body"><div class="c-title">Baño renovado completo</div><div class="c-desc">Demolición, impermeabilización y terminaciones desde cero</div></div></div></div>
+        <div class="c-slide"><div class="c-card"><div class="c-img-wrap"><img class="c-img" src="assets/cocina-despues.png" alt="Cocina renovada" loading="lazy"></div><div class="c-body"><div class="c-title">Cocina integral renovada</div><div class="c-desc">Muebles, mesada nueva, azulejos y plomería integral</div></div></div></div>
+        <div class="c-slide"><div class="c-card"><div class="c-img-wrap"><img class="c-img" src="assets/local-despues.png" alt="Local comercial" loading="lazy"></div><div class="c-body"><div class="c-title">Local comercial renovado</div><div class="c-desc">Renovación integral para abrir en tiempo y forma</div></div></div></div>
+        <div class="c-slide"><div class="c-card"><div class="c-img-wrap"><img class="c-img" src="assets/fachada-despues.png" alt="Fachada renovada" loading="lazy"></div><div class="c-body"><div class="c-title">Fachada renovada</div><div class="c-desc">Revoque, pintura exterior y carpintería nueva</div></div></div></div>
+        <div class="c-slide"><div class="c-card"><div class="c-img-wrap"><img class="c-img" src="assets/patio-despues.png" alt="Patio y quincho" loading="lazy"></div><div class="c-body"><div class="c-title">Patio con quincho</div><div class="c-desc">Contrapiso, piso alisado y construcción de quincho</div></div></div></div>
+        <div class="c-slide"><div class="c-card"><div class="c-img-wrap"><img class="c-img" src="assets/real-cocina-obra.jpg" alt="Cocina con mármol en obra" loading="lazy"></div><div class="c-body"><div class="c-title">Cocina con revestimiento de mármol</div><div class="c-desc">Mesada y cerámicos colocados en obra real</div></div></div></div>
+        <div class="c-slide"><div class="c-card"><div class="c-img-wrap"><img class="c-img" src="assets/real-escalera-obra.jpg" alt="Escalera en construcción" loading="lazy"></div><div class="c-body"><div class="c-title">Escalera en estructura metálica</div><div class="c-desc">Estructura metálica con carpintería de doble vidrio</div></div></div></div>
+        <div class="c-slide"><div class="c-card"><div class="c-img-wrap"><img class="c-img" src="assets/render-exterior-3d.jpg" alt="Planificación 3D de obra" loading="lazy"></div><div class="c-body"><div class="c-title">Planificamos tu obra en 3D</div><div class="c-desc">Antes de arrancar, diseñamos el espacio para que sepas cómo va a quedar</div></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TESTIMONIOS ══ -->
+<section id="testimonios">
+  <div class="wrap">
+    <div class="c-head reveal">
+      <div>
+        <div class="s-kicker">Clientes reales</div>
+        <h2 class="s-title" style="margin-bottom:0">Lo que dicen de nosotros</h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <div class="test-dots" id="test-dots"></div>
+        <div class="c-controls">
+          <button class="c-btn" id="test-prev" aria-label="Anterior">←</button>
+          <button class="c-btn" id="test-next" aria-label="Siguiente">→</button>
+        </div>
+      </div>
+    </div>
+    <div class="test-outer">
+      <div class="test-track" id="test-track">
+
+        <div class="test-slide"><div class="test-card">
+          <div class="test-via"><svg class="test-via-g" viewBox="0 0 24 24"><text y="16" font-size="14" font-weight="800" font-family="Arial">G</text></svg>Google</div>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">La verdad que yo desconfiaba un poco, ya me habían fallado antes. Leo vino, miró todo, me cerró el precio y no se movió ni un peso. Me mandaba fotos por WhatsApp todos los días. El baño quedó una joya.</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#1B4FD8,#3B82F6)">M</div>
+            <div><div class="test-name">Marcela G.</div><div class="test-detail">Baño completo · Villa Urquiza</div></div>
+          </div>
+        </div></div>
+
+        <div class="test-slide"><div class="test-card">
+          <div class="test-via"><svg class="test-via-g" viewBox="0 0 24 24"><text y="16" font-size="14" font-weight="800" font-family="Arial">G</text></svg>Google</div>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">Tenía el local parado dos meses porque el anterior chabón desapareció. Llamé a Renovra, vinieron al otro día, me cerraron el precio y en 20 días abrí. Sin aumentos, sin vueltas. Ojalá los hubiera llamado antes.</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#7C3AED,#9333EA)">R</div>
+            <div><div class="test-name">Roberto S.</div><div class="test-detail">Local comercial · Caballito</div></div>
+          </div>
+        </div></div>
+
+        <div class="test-slide"><div class="test-card">
+          <div class="test-via"><svg class="test-via-g" viewBox="0 0 24 24"><text y="16" font-size="14" font-weight="800" font-family="Arial">G</text></svg>Google</div>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">Lo que mas me sorprendio fue que empezaron el dia que dijeron. La cocina quedo exactamente como habiamos acordado, y cuando terminaron limpiaron todo. Eso no es tan comun hoy en dia, te lo juro.</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#059669,#10B981)">C</div>
+            <div><div class="test-name">Claudia M.</div><div class="test-detail">Cocina integral · Palermo</div></div>
+          </div>
+        </div></div>
+
+        <div class="test-slide"><div class="test-card">
+          <div class="test-via"><svg class="test-via-g" viewBox="0 0 24 24"><text y="16" font-size="14" font-weight="800" font-family="Arial">G</text></svg>Google</div>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">Tuve filtraciones que tres personas no me pudieron resolver. Renovra encontro de donde venia el agua, lo atacaron de raiz y ya van ocho meses sin problema. La diferencia es que estos tipos laburan de verdad.</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#DC2626,#EF4444)">D</div>
+            <div><div class="test-name">Diego F.</div><div class="test-detail">Filtraciones y remodelación · Ramos Mejía</div></div>
+          </div>
+        </div></div>
+
+        <div class="test-slide"><div class="test-card">
+          <div class="test-via"><svg class="test-via-g" viewBox="0 0 24 24"><text y="16" font-size="14" font-weight="800" font-family="Arial">G</text></svg>Google</div>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">Hicimos el bano y la cocina juntos. Precio cerrado, plazo cumplido y lo que acordamos fue exactamente lo que se hizo. Nada de "surgio esto, surgio lo otro". Para mi eso lo es todo.</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#D97706,#F59E0B)">K</div>
+            <div><div class="test-name">Karina P.</div><div class="test-detail">Baño y cocina · Flores</div></div>
+          </div>
+        </div></div>
+
+        <div class="test-slide"><div class="test-card">
+          <div class="test-via"><svg class="test-via-g" viewBox="0 0 24 24"><text y="16" font-size="14" font-weight="800" font-family="Arial">G</text></svg>Google</div>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">El patio era un baldio total. Ahora tenemos quincho, piso y parrilla. Vinieron todos los dias, trabajaron bien y no me pidieron plata extra en ningun momento. El resultado habla solo, no necesito decir mas.</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#0E7490,#0891B2)">S</div>
+            <div><div class="test-name">Sebastián R.</div><div class="test-detail">Patio y quincho · Lanús</div></div>
+          </div>
+        </div></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="s-kicker">Preguntas frecuentes</div>
+      <h2 class="s-title">Lo que nos preguntan<br>antes de arrancar</h2>
+    </div>
+    <div class="faq-list stagger">
+      <div class="faq-item"><button class="faq-q">¿Cuánto tarda un baño completo?<span class="faq-icon">+</span></button><div class="faq-a">Un baño estándar lo terminamos en 3 a 4 semanas. Depende del estado inicial y de lo que querés hacer. Antes de darte un plazo, pasamos a verlo. No tiramos fechas sin mirar primero.</div></div>
+      <div class="faq-item"><button class="faq-q">¿La visita y el presupuesto tienen costo?<span class="faq-icon">+</span></button><div class="faq-a">No, son gratis. Si primero mandás fotos por WhatsApp podemos orientarte antes de coordinar la visita, sin ningún compromiso de tu parte.</div></div>
+      <div class="faq-item"><button class="faq-q">¿Cuántas personas van a trabajar en mi casa?<span class="faq-icon">+</span></button><div class="faq-a">Somos Leonardo y su socio. Nosotros mismos, no subcontratistas. Eso hace que todo sea más prolijo y que siempre haya alguien responsable que conoce la obra de punta a punta.</div></div>
+      <div class="faq-item"><button class="faq-q">¿Qué pasa si aparece algo imprevisto durante la obra?<span class="faq-icon">+</span></button><div class="faq-a">Te llamamos antes de tocar algo fuera de lo acordado. No sumamos trabajo ni costo sin avisarte primero. Si hay algo que cambia el precio o el plazo, lo hablamos y vos decidís.</div></div>
+      <div class="faq-item"><button class="faq-q">¿El precio que me dan es el que termino pagando?<span class="faq-icon">+</span></button><div class="faq-a">Sí. El presupuesto incluye materiales y mano de obra. No aparecen costos después. Si algo no estaba previsto y hay que charlarlo, lo hablamos antes de avanzar.</div></div>
+      <div class="faq-item"><button class="faq-q">¿Trabajan en toda la Ciudad y el GBA?<span class="faq-icon">+</span></button><div class="faq-a">Sí, cubrimos CABA completa y la mayoría del GBA. Si no estás seguro de tu zona, mandanos un mensaje y te confirmamos al toque.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="final-cta" id="contacto">
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="s-kicker reveal">Hablemos</div>
+    <h2 class="s-title reveal">¿Tenés algo en mente<br>que querés cambiar?</h2>
+    <p class="reveal">Mandanos fotos de lo que querés renovar por WhatsApp. Te respondemos el mismo día con una orientación de precio y, si hace falta, coordinamos la visita gratis.</p>
+    <div class="cta-buttons reveal">
+      <a class="btn btn-y btn-lg" href="https://wa.me/5491144101670?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20Renovra.%20Quisiera%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Contactar con Renovra
+      </a>
+      <a class="btn btn-ghost btn-lg" href="mailto:Leogueva1972@gmail.com">Escribir por email</a>
+    </div>
+    <p class="cta-note reveal">Lun a Sáb de 8 a 20 · CABA y GBA · Presupuesto sin costo</p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">Renov<span>ra</span></div>
+    <p>Baños · Cocinas · Locales · Remodelaciones · CABA y GBA</p>
+    <div class="foot-links">
+      <a href="https://wa.me/5491144101670">+54 9 11 4410-1670</a>
+      <a href="mailto:Leogueva1972@gmail.com">Leogueva1972@gmail.com</a>
+      <a href="#inicio">↑ Volver arriba</a>
+    </div>
+    <p style="margin-top:14px;font-size:.71rem;opacity:.3">© <span id="yr"></span> Renovra · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<!-- ══ WA FLOAT ══ -->
+<a class="wa-float" href="https://wa.me/5491144101670?text=Hola%2C%20quiero%20un%20presupuesto%20de%20Renovra" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ── Intro overlay ──
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const intro = document.getElementById('site-intro');
+      intro.classList.add('out');
+      // Hero entrance animation
+      setTimeout(() => {
+        document.querySelectorAll('.h-e, .h-er').forEach(el => el.classList.add('in'));
+      }, 300);
+    }, 1500);
+  });
+
+  // ── Nav hamburger ──
+  const ham = document.getElementById('nav-ham');
+  const navLinks = document.getElementById('nav-links');
+  ham.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    ham.classList.toggle('open', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open'); ham.classList.remove('open');
+  }));
+
+  // ── Nav scroll glow ──
+  const navEl = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    navEl.classList.toggle('scrolled', window.scrollY > 60);
+  }, {passive:true});
+
+  // ── Scroll reveal ──
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal, .reveal-r, .stagger').forEach(el => io.observe(el));
+
+  // ── Counters ──
+  function animCount(el) {
+    const target = parseFloat(el.dataset.count), suffix = el.dataset.suffix||'', plus = el.dataset.plus==='true';
+    const dur = 1600, start = performance.now();
+    (function step(now) {
+      const p = Math.min((now-start)/dur,1), e = 1-Math.pow(1-p,3);
+      el.textContent = (plus?'+':'')+Math.round(target*e)+suffix;
+      if (p<1) requestAnimationFrame(step);
+    })(performance.now());
+  }
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { animCount(e.target); cio.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+
+  // ── Hero image carousel ──
+  const hcSlides = [...document.querySelectorAll('.hc-slide')];
+  const hcDots   = [...document.querySelectorAll('.hc-dot')];
+  const hcK = document.getElementById('hc-kicker'), hcT = document.getElementById('hc-title');
+  const hcLbl = [
+    {k:'Baño renovado',t:'Demolición total y terminaciones desde cero'},
+    {k:'Cocina integral',t:'Muebles, mesada, revestimientos y plomería nueva'},
+    {k:'Local comercial',t:'Entregado en fecha para poder abrir'},
+    {k:'Fachada renovada',t:'Revoque, pintura exterior y carpintería nueva'},
+    {k:'Patio con quincho',t:'Contrapiso, piso alisado y construcción desde cero'},
+  ];
+  let hcCur = 0;
+  function hcGo(i) {
+    hcSlides[hcCur].classList.remove('on'); hcDots[hcCur].classList.remove('on');
+    hcCur = (i+hcSlides.length)%hcSlides.length;
+    hcSlides[hcCur].classList.add('on'); hcDots[hcCur].classList.add('on');
+    if (hcK) hcK.textContent = hcLbl[hcCur].k;
+    if (hcT) hcT.textContent = hcLbl[hcCur].t;
+  }
+  let hcTimer = setInterval(() => hcGo(hcCur+1), 5000);
+  hcDots.forEach(d => d.addEventListener('click', () => { clearInterval(hcTimer); hcGo(+d.dataset.i); hcTimer = setInterval(() => hcGo(hcCur+1), 5000); }));
+
+  // ── Antes/Después sliders ──
+  document.querySelectorAll('[data-ad]').forEach(el => {
+    const before = el.querySelector('.ad-before'), divider = el.querySelector('.ad-divider'), handle = el.querySelector('.ad-handle');
+    let drag = false;
+    function setPos(cx) {
+      const r = el.getBoundingClientRect(), pct = Math.max(4,Math.min(96,((cx-r.left)/r.width)*100));
+      before.style.clipPath = `inset(0 ${(100-pct).toFixed(2)}% 0 0)`;
+      divider.style.left = handle.style.left = pct+'%';
+    }
+    el.addEventListener('mousedown',  e => { drag=true; setPos(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', e => { if(drag) setPos(e.clientX); });
+    window.addEventListener('mouseup',   () => { drag=false; });
+    el.addEventListener('touchstart', e => { drag=true; setPos(e.touches[0].clientX); }, {passive:true});
+    el.addEventListener('touchmove',  e => { if(drag) setPos(e.touches[0].clientX); }, {passive:true});
+    el.addEventListener('touchend',   () => { drag=false; });
+  });
+
+  // ── Generic transform carousel factory ──
+  function makeCarousel(trackId, dotsId, prevId, nextId) {
+    const track = document.getElementById(trackId);
+    const dotsWrap = document.getElementById(dotsId);
+    const btnPrev  = document.getElementById(prevId);
+    const btnNext  = document.getElementById(nextId);
+    if (!track) return;
+    const slides = [...track.querySelectorAll(':scope > *')];
+    let cur = 0;
+
+    function vis() { return window.innerWidth >= 900 ? 3 : window.innerWidth >= 580 ? 2 : 1; }
+    function pages() { return Math.ceil(slides.length / vis()); }
+
+    function setSizes() {
+      const w = Math.floor(track.parentElement.clientWidth / vis());
+      slides.forEach(s => { s.style.minWidth = w+'px'; s.style.maxWidth = w+'px'; });
+    }
+
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      for (let i = 0; i < pages(); i++) {
+        const d = document.createElement('button');
+        d.className = 'test-dot'+(i===cur?' on':'');
+        d.setAttribute('aria-label','Página '+(i+1));
+        d.addEventListener('click', () => go(i));
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function go(page) {
+      cur = Math.max(0, Math.min(pages()-1, page));
+      track.style.transform = `translateX(-${cur * track.parentElement.clientWidth}px)`;
+      [...dotsWrap.querySelectorAll('.test-dot')].forEach((d,i) => d.classList.toggle('on', i===cur));
+    }
+
+    function init() { setSizes(); buildDots(); go(cur); }
+
+    btnPrev.addEventListener('click', () => go(cur-1));
+    btnNext.addEventListener('click', () => go(cur+1));
+
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { cur=0; init(); }, 150); });
+
+    let tsX = 0;
+    track.parentElement.addEventListener('touchstart', e => { tsX = e.touches[0].clientX; }, {passive:true});
+    track.parentElement.addEventListener('touchend', e => {
+      if (Math.abs(tsX - e.changedTouches[0].clientX) > 50) go(tsX > e.changedTouches[0].clientX ? cur+1 : cur-1);
+    }, {passive:true});
+
+    init();
+  }
+
+  makeCarousel('trab-track', 'trab-dots', 'trab-prev', 'trab-next');
+  makeCarousel('test-track', 'test-dots', 'test-prev', 'test-next');
+
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement, isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // ── Video rail carousel ──
+  (function() {
+    const rail  = document.getElementById('vid-rail');
+    const track = document.getElementById('vid-track');
+    if (!rail || !track) return;
+
+    const originals = [...track.querySelectorAll('.vid-c')];
+    const CARD_W = 220 + 14; // width + margin-right
+    const HALF_W = originals.length * CARD_W; // 1404px
+
+    // Clone for seamless infinite loop
+    originals.forEach(c => {
+      const cl = c.cloneNode(true);
+      cl.classList.add('vid-clone');
+      track.appendChild(cl);
+    });
+
+    let pos = 0, started = false, paused = false;
+    const SPEED = 0.72;
+
+    function step() {
+      if (!paused) {
+        pos += SPEED;
+        if (pos >= HALF_W) pos -= HALF_W;
+        track.style.transform = 'translateX(-' + pos + 'px)';
+      }
+      requestAnimationFrame(step);
+    }
+
+    rail.addEventListener('mouseenter', () => { paused = true; });
+    rail.addEventListener('mouseleave', () => { paused = false; });
+
+    let tX = 0;
+    rail.addEventListener('touchstart', e => { tX = e.touches[0].clientX; paused = true; }, {passive:true});
+    rail.addEventListener('touchend',   e => {
+      pos += tX - e.changedTouches[0].clientX;
+      if (pos < 0) pos += HALF_W;
+      if (pos >= HALF_W) pos -= HALF_W;
+      paused = false;
+    }, {passive:true});
+
+    track.addEventListener('click', e => {
+      const btn = e.target.closest('.vid-snd');
+      if (!btn) return;
+      e.stopPropagation();
+      const card = btn.closest('.vid-c');
+      const idx  = card.dataset.idx;
+      track.querySelectorAll('.vid-c[data-idx="' + idx + '"]').forEach(c => {
+        const vid = c.querySelector('video');
+        vid.muted = !vid.muted;
+        c.classList.toggle('unmuted', !vid.muted);
+        c.querySelector('.v-on').style.display  = vid.muted ? 'none' : '';
+        c.querySelector('.v-off').style.display = vid.muted ? '' : 'none';
+      });
+    });
+
+    const sio = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !started) {
+        started = true;
+        track.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
+        requestAnimationFrame(step);
+        sio.disconnect();
+      }
+    }, { threshold: 0.1 });
+    sio.observe(document.getElementById('videos'));
+  })();
+</script>
+</body>
+</html>
