@@ -255,6 +255,7 @@
     .cat-block.reveal:nth-child(3){transition-delay:.12s}
     .cat-block.reveal:nth-child(4){transition-delay:.18s}
     .cat-block.reveal:nth-child(5){transition-delay:.24s}
+    .cat-block.reveal:nth-child(6){transition-delay:.3s}
     .cat-block{position:relative;display:grid;grid-template-columns:1fr 1.3fr;
       background:var(--white);border-radius:var(--rl);
       box-shadow:0 0 0 1px rgba(var(--ink-rgb),.06),0 20px 50px rgba(var(--ink-rgb),.07);
@@ -266,8 +267,9 @@
     .cat-block:nth-child(1){--accent:#D99A00;--accent-rgb:217,154,0}
     .cat-block:nth-child(2){--accent:#A8753B;--accent-rgb:168,117,59}
     .cat-block:nth-child(3){--accent:#3D6B82;--accent-rgb:61,107,130}
-    .cat-block:nth-child(4){--accent:#B4472F;--accent-rgb:180,71,47}
-    .cat-block:nth-child(5){--accent:#5B6B4F;--accent-rgb:91,107,79}
+    .cat-block:nth-child(4){--accent:#2F7A6B;--accent-rgb:47,122,107}
+    .cat-block:nth-child(5){--accent:#B4472F;--accent-rgb:180,71,47}
+    .cat-block:nth-child(6){--accent:#5B6B4F;--accent-rgb:91,107,79}
     .cat-text{padding:36px 40px;display:flex;flex-direction:column;justify-content:center;gap:10px}
     .cat-num{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.85rem;
       letter-spacing:.14em;color:var(--accent)}
@@ -724,9 +726,9 @@
       <div class="cat-block reveal">
         <div class="cat-text">
           <span class="cat-num">03</span>
-          <h3 class="cat-title">Cocinas y baños</h3>
-          <p class="cat-desc">Los ambientes que más se usan, resueltos con oficio real: plomería, revestimientos y mobiliario a medida.</p>
-          <a class="cat-cta" href="https://wa.me/5491144101670?text=Hola%2C%20me%20interesa%20consultar%20por%20una%20cocina%20o%20ba%C3%B1o." target="_blank" rel="noopener">
+          <h3 class="cat-title">Cocinas</h3>
+          <p class="cat-desc">El ambiente que más se usa en la casa, resuelto con oficio real: plomería, revestimientos y muebles a medida.</p>
+          <a class="cat-cta" href="https://wa.me/5491144101670?text=Hola%2C%20me%20interesa%20consultar%20por%20una%20cocina." target="_blank" rel="noopener">
             Consultar este servicio
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -739,13 +741,35 @@
             <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
           </div>
-          <img class="cat-extra" src="assets/bano-despues.png" alt="Baño renovado" loading="lazy">
+          <img class="cat-extra" src="assets/real-cocina-obra.jpg" alt="Cocina en obra" loading="lazy">
         </div>
       </div>
 
       <div class="cat-block reveal">
         <div class="cat-text">
           <span class="cat-num">04</span>
+          <h3 class="cat-title">Baños</h3>
+          <p class="cat-desc">El ambiente que más se nota: terminaciones prolijas, buena plomería y materiales de calidad.</p>
+          <a class="cat-cta" href="https://wa.me/5491144101670?text=Hola%2C%20me%20interesa%20consultar%20por%20un%20ba%C3%B1o." target="_blank" rel="noopener">
+            Consultar este servicio
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="cat-collage">
+          <div class="ad-compare" data-ad>
+            <div class="ad-after" style="background-image:url('assets/bano-despues.png')"></div>
+            <div class="ad-before" style="background-image:url('assets/bano-antes.png')"></div>
+            <div class="ad-divider"></div>
+            <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
+          </div>
+          <img class="cat-extra" src="assets/real-plomeria-bano.jpg" alt="Plomería de baño en obra" loading="lazy">
+        </div>
+      </div>
+
+      <div class="cat-block reveal">
+        <div class="cat-text">
+          <span class="cat-num">05</span>
           <h3 class="cat-title">Arreglos e instalaciones</h3>
           <p class="cat-desc">Soluciones concretas para trabajos puntuales: plomería, electricidad, pintura y reparaciones generales.</p>
           <a class="cat-cta" href="https://wa.me/5491144101670?text=Hola%2C%20me%20interesa%20consultar%20por%20un%20arreglo%20o%20instalaci%C3%B3n." target="_blank" rel="noopener">
@@ -754,14 +778,14 @@
           </a>
         </div>
         <div class="cat-collage">
-          <div class="cat-main-photo"><img src="assets/real-plomeria-bano.jpg" alt="Arreglos e instalaciones" loading="lazy"></div>
-          <img class="cat-extra" src="assets/real-escalera-obra.jpg" alt="Escalera en estructura metálica" loading="lazy">
+          <div class="cat-main-photo"><img src="assets/real-escalera-obra.jpg" alt="Instalación en estructura metálica" loading="lazy"></div>
+          <img class="cat-extra" src="assets/real-estructura-losa.jpg" alt="Trabajo de estructura" loading="lazy">
         </div>
       </div>
 
       <div class="cat-block reveal">
         <div class="cat-text">
-          <span class="cat-num">05</span>
+          <span class="cat-num">06</span>
           <h3 class="cat-title">Obra y estructuras</h3>
           <p class="cat-desc">Construcción y trabajos estructurales ejecutados con oficio: mampostería, contrapisos y losas.</p>
           <a class="cat-cta" href="https://wa.me/5491144101670?text=Hola%2C%20me%20interesa%20consultar%20por%20obra%20y%20estructuras." target="_blank" rel="noopener">
