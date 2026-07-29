@@ -488,15 +488,19 @@
       .svc5-title{font-size:1.7rem}
       .svc5-photo{aspect-ratio:16/9}
       .ad-compare{aspect-ratio:4/3}
-      .cat-block{border-radius:16px}
+      .cat-block{border-radius:16px;height:auto;min-height:0}
       .cat-list{gap:20px}
       .cat-text{padding:24px 22px 4px}
       .cat-title{font-size:1.7rem;line-height:1.15}
       .cat-cta{font-size:1rem}
       .cat-desc{max-width:none;font-size:1rem;line-height:1.5}
-      .cat-collage{flex-direction:column;align-items:stretch;padding:16px 20px 20px;gap:12px}
-      .ad-compare,.cat-main-photo,.cat-slideshow{border-radius:16px}
-      .cat-extra{position:static;width:34%;align-self:flex-end;bottom:auto;right:auto;border-radius:12px}
+      .cat-collage{display:flex;flex-direction:column;align-items:stretch;
+        padding:16px 20px 20px;gap:12px;height:auto;min-height:0}
+      .ad-compare,.cat-main-photo,.cat-slideshow{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:16px}
+      .cat-extra{position:relative;inset:auto;top:auto;left:auto;right:auto;bottom:auto;
+        width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;
+        margin:0;align-self:stretch;border:none;border-radius:14px;
+        box-shadow:0 8px 20px rgba(11,16,22,.14)}
       .cat-block:hover .cat-extra{transform:none}
       .test-card{width:280px;padding:20px}
       .test-rail::before,.test-rail::after{width:36px}
@@ -740,7 +744,7 @@
             <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
           </div>
-          <video class="cat-extra" autoplay muted loop playsinline preload="metadata" aria-label="Local comercial en obra">
+          <video class="cat-extra" autoplay muted loop playsinline controls preload="metadata" aria-label="Local comercial en obra">
             <source src="assets/obra-video-6.mp4" type="video/mp4">
           </video>
         </div>
@@ -764,7 +768,7 @@
             <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
           </div>
-          <video class="cat-extra" autoplay muted loop playsinline preload="metadata" aria-label="Equipo propio en obra">
+          <video class="cat-extra" autoplay muted loop playsinline controls preload="metadata" aria-label="Equipo propio en obra">
             <source src="assets/obra-video-4.mp4" type="video/mp4">
           </video>
         </div>
@@ -788,7 +792,7 @@
             <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
           </div>
-          <video class="cat-extra" autoplay muted loop playsinline preload="metadata" aria-label="Cocina en obra">
+          <video class="cat-extra" autoplay muted loop playsinline controls preload="metadata" aria-label="Cocina en obra">
             <source src="assets/obra-video-cocina.mp4" type="video/mp4">
           </video>
         </div>
@@ -812,7 +816,7 @@
             <div class="ad-handle"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5L3 12L8 19M16 5L21 12L16 19" stroke="#222" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span class="ad-label-b">Antes</span><span class="ad-label-a">Después</span>
           </div>
-          <video class="cat-extra" autoplay muted loop playsinline preload="metadata" aria-label="Plomería de baño en obra">
+          <video class="cat-extra" autoplay muted loop playsinline controls preload="metadata" aria-label="Plomería de baño en obra">
             <source src="assets/obra-video-3.mp4" type="video/mp4">
           </video>
         </div>
@@ -839,7 +843,7 @@
             <img class="cs-slide" src="assets/arreglos-04.jpg" alt="Arreglos e instalaciones - foto 7" loading="lazy">
             <img class="cs-slide" src="assets/arreglos-05.jpg" alt="Arreglos e instalaciones - foto 8" loading="lazy">
           </div>
-          <video class="cat-extra" autoplay muted loop playsinline preload="metadata" aria-label="Arreglos e instalaciones en obra">
+          <video class="cat-extra" autoplay muted loop playsinline controls preload="metadata" aria-label="Arreglos e instalaciones en obra">
             <source src="assets/obra-video-arreglos.mp4" type="video/mp4">
           </video>
         </div>
@@ -865,7 +869,7 @@
             <img class="cs-slide" src="assets/estructura-06.jpg" alt="Obra y estructuras - foto 6" loading="lazy">
             <img class="cs-slide" src="assets/estructura-07.jpg" alt="Obra y estructuras - foto 7" loading="lazy">
           </div>
-          <video class="cat-extra" autoplay muted loop playsinline preload="metadata" aria-label="Obra y estructuras en obra">
+          <video class="cat-extra" autoplay muted loop playsinline controls preload="metadata" aria-label="Obra y estructuras en obra">
             <source src="assets/obra-video-estructura.mp4" type="video/mp4">
           </video>
         </div>
