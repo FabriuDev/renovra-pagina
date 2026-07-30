@@ -71,6 +71,7 @@
     .nav-links{display:flex;align-items:center;gap:2px}
     .nav-links-main{display:flex;align-items:center;gap:2px}
     .nav-links-support{display:none}
+    .nav-link-num{display:none}
     .nav-links a:not(.btn){font-size:.85rem;font-weight:600;color:#fff;padding:9px 13px;
       border-radius:999px;transition:background .2s,color .35s}
     nav.scrolled .nav-links a:not(.btn){color:var(--ink)}
@@ -432,7 +433,7 @@
       .foot-grid{grid-template-columns:1fr 1fr;gap:32px 24px}
     }
     @media(max-width:860px){
-      .nav-ham{display:flex}
+      .nav-ham{display:flex;position:relative;z-index:230}
       .nav-links{position:fixed;top:0;right:0;height:100vh;height:100dvh;z-index:220;
         width:min(84vw,320px);background:#0B1016;
         display:flex;flex-direction:column;align-items:stretch;gap:0;
@@ -442,7 +443,9 @@
       .nav-links.open{transform:translateX(0)}
       .nav-links-main{display:flex;flex-direction:column;align-items:stretch;gap:2px}
       nav.scrolled .nav-links a:not(.btn){color:#fff}
-      .nav-links a:not(.btn){padding:14px 14px;border-radius:10px;font-size:1.05rem}
+      .nav-links a:not(.btn){display:flex;align-items:center;padding:14px 14px;border-radius:10px;font-size:1.05rem}
+      .nav-link-num{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:600;
+        font-size:.78rem;letter-spacing:.06em;color:var(--yellow);width:28px;flex-shrink:0}
       .nav-links a:not(.btn):hover{background:rgba(255,255,255,.08)}
       nav.scrolled .nav-links a:not(.btn):hover{background:rgba(255,255,255,.08)}
       .nav-links-support{display:flex;flex-direction:column;gap:10px;
@@ -574,10 +577,10 @@
     <button class="nav-ham" id="nav-ham" aria-label="Menú" aria-haspopup="true" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links" id="nav-links">
       <div class="nav-links-main">
-        <a href="#servicios">Servicios</a>
-        <a href="#trabajos">Trabajos</a>
-        <a href="#opiniones">Opiniones</a>
-        <a href="#formulario">Contacto</a>
+        <a href="#servicios"><span class="nav-link-num">01</span>Servicios</a>
+        <a href="#trabajos"><span class="nav-link-num">02</span>Trabajos</a>
+        <a href="#opiniones"><span class="nav-link-num">03</span>Opiniones</a>
+        <a href="#formulario"><span class="nav-link-num">04</span>Contacto</a>
       </div>
       <div class="nav-links-support">
         <span class="nav-support-label">¿Preferís llamar directo?</span>
