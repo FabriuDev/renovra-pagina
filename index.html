@@ -69,6 +69,8 @@
       line-height:1.5;text-transform:uppercase;transition:color .35s}
     nav.scrolled .nav-tag{color:var(--muted-l)}
     .nav-links{display:flex;align-items:center;gap:2px}
+    .nav-links-main{display:flex;align-items:center;gap:2px}
+    .nav-links-support{display:none}
     .nav-links a:not(.btn){font-size:.85rem;font-weight:600;color:#fff;padding:9px 13px;
       border-radius:999px;transition:background .2s,color .35s}
     nav.scrolled .nav-links a:not(.btn){color:var(--ink)}
@@ -184,6 +186,7 @@
       letter-spacing:.01em;line-height:1.05;margin:0}
     .pay-title-line1{display:block;color:var(--white)}
     .pay-title-line2{display:block;color:var(--yellow);font-size:.92em}
+    .pt-short{display:none}
     .pay-microcopy{margin:9px 0 0;font-size:1rem;color:var(--white);line-height:1.45}
 
     .pay-panel{background:#171B21;border:1px solid rgba(107,111,114,.35);border-radius:14px;
@@ -430,16 +433,25 @@
       .nav-ham{display:flex}
       .nav-links{position:fixed;top:0;right:0;height:100vh;height:100dvh;z-index:220;
         width:min(84vw,320px);background:#0B1016;
-        display:flex;flex-direction:column;align-items:stretch;gap:4px;
-        padding:88px 22px 24px;overflow-y:auto;
-        transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.8,.2,1);
+        display:flex;flex-direction:column;align-items:stretch;gap:0;
+        padding:84px 22px 28px;overflow-y:auto;
+        transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);
         box-shadow:-16px 0 40px rgba(0,0,0,.3)}
       .nav-links.open{transform:translateX(0)}
+      .nav-links-main{display:flex;flex-direction:column;align-items:stretch;gap:2px}
       nav.scrolled .nav-links a:not(.btn){color:#fff}
-      .nav-links a:not(.btn){padding:15px 16px;border-radius:10px;font-size:1rem}
+      .nav-links a:not(.btn){padding:14px 14px;border-radius:10px;font-size:1.05rem}
       .nav-links a:not(.btn):hover{background:rgba(255,255,255,.08)}
       nav.scrolled .nav-links a:not(.btn):hover{background:rgba(255,255,255,.08)}
-      .nav-links .btn{margin-left:0;margin-top:auto;width:100%;font-size:1rem;padding:15px 20px}
+      .nav-links-support{display:flex;flex-direction:column;gap:10px;
+        margin-top:22px;padding:18px 14px 0;border-top:1px solid rgba(255,255,255,.1)}
+      .nav-support-label{font-size:.78rem;color:rgba(255,255,255,.5);font-weight:500}
+      .nav-support-phone{display:inline-flex;align-items:center;gap:9px;width:fit-content;
+        color:#fff;font-weight:700;font-size:1.05rem;padding:6px 8px;margin:-6px -8px;
+        border-radius:8px;transition:background .2s}
+      .nav-support-phone:hover{background:rgba(255,255,255,.08)}
+      .nav-support-phone svg{width:17px;height:17px;stroke:var(--yellow);flex-shrink:0}
+      .nav-links .btn{margin-left:0;margin-top:22px;width:100%;font-size:1rem;padding:15px 20px}
       body.nav-open{overflow:hidden}
     }
     @media(max-width:820px){
@@ -483,7 +495,10 @@
       .pay-wrap{gap:18px}
       .pay-ic{width:44px;height:44px}
       .pay-ic svg{width:20px;height:20px}
-      .pay-title{font-size:1.15rem}
+      .pay-title{font-size:1.1rem}
+      .pt-full{display:none}
+      .pt-short{display:inline}
+      .pay-title-line2{font-size:.8em;font-weight:600;margin-top:2px}
       .pay-microcopy{font-size:.86rem;margin-top:6px}
       .pay-panel{padding:14px}
       .pay-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px}
@@ -556,10 +571,19 @@
     </div>
     <button class="nav-ham" id="nav-ham" aria-label="Menú" aria-haspopup="true" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links" id="nav-links">
-      <a href="#servicios">Servicios</a>
-      <a href="#trabajos">Trabajos</a>
-      <a href="#opiniones">Opiniones</a>
-      <a href="#formulario">Contacto</a>
+      <div class="nav-links-main">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#formulario">Contacto</a>
+      </div>
+      <div class="nav-links-support">
+        <span class="nav-support-label">¿Preferís llamar directo?</span>
+        <a class="nav-support-phone" href="tel:+5491144101670">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 011.12 4.18 2 2 0 013.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +54 11 4410-1670
+        </a>
+      </div>
       <a class="btn btn-y" href="https://wa.me/5491144101670?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20Renovra.%20Quisiera%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">Pedir presupuesto</a>
     </div>
   </div>
@@ -621,10 +645,10 @@
         </div>
         <div>
           <div class="pay-title">
-            <span class="pay-title-line1">Contanos tu proyecto, por más pequeño que sea.</span>
+            <span class="pay-title-line1"><span class="pt-full">Contanos tu proyecto, por más pequeño que sea.</span><span class="pt-short">Contanos tu proyecto.</span></span>
             <span class="pay-title-line2">Nos adaptamos a tu presupuesto.</span>
           </div>
-          <div class="pay-microcopy">Tu consulta no molesta. Te orientamos sin compromiso.</div>
+          <div class="pay-microcopy">Tu consulta no molesta, te orientamos sin compromiso.</div>
         </div>
       </div>
       <div class="pay-panel">
@@ -1178,12 +1202,13 @@
   }, { rootMargin: '-78px 0px 0px 0px', threshold: 0 });
   navObs.observe(heroEl);
 
-  // ── WA float: ocultar cerca del footer y de los botones del formulario ──
+  // ── WA float: ocultar cerca del footer, del formulario y de los videos de las cards ──
   (function(){
     const waWrap = document.querySelector('.wa-float-wrap');
     const footerEl = document.querySelector('footer');
     const cfActionsEl = document.querySelector('.cf-actions');
-    const targets = [footerEl, cfActionsEl].filter(Boolean);
+    const mediaEls = [...document.querySelectorAll('.cat-extra')];
+    const targets = [footerEl, cfActionsEl, ...mediaEls].filter(Boolean);
     if (!waWrap || !targets.length) return;
     const seen = new Set();
     const collideObs = new IntersectionObserver(entries => {
