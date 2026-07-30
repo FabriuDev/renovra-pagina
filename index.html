@@ -195,7 +195,19 @@
     .pay-panel-cta{margin:14px 0 0;width:100%;min-height:48px;font-size:1rem}
 
     /* ── SERVICIOS ── */
-    .svc5-grid{display:grid;grid-template-columns:repeat(5,1fr);border:none;
+    #servicios{position:relative;background:var(--white);padding-top:72px;padding-bottom:88px}
+    #servicios::before{content:'';position:absolute;top:0;left:0;right:0;height:28px;pointer-events:none;
+      background:linear-gradient(to bottom,rgba(11,16,22,.07),rgba(11,16,22,0))}
+    #servicios .s-head{margin-bottom:0}
+    .services-heading{opacity:.75;transform:translateY(8px);
+      transition:opacity 420ms ease,transform 420ms ease}
+    .services-heading.is-visible{opacity:1;transform:none}
+    .svc5-card,.svc5-grid{opacity:1;visibility:visible;transform:none}
+    @media(prefers-reduced-motion:reduce){
+      #servicios *,.svc5-grid,.svc5-card{animation:none!important;transition-duration:.01ms!important;transform:none!important}
+      .svc5-grid,.svc5-card{opacity:1!important;visibility:visible!important}
+    }
+    .svc5-grid{display:grid;grid-template-columns:repeat(5,1fr);border:none;margin-top:40px;
       border-radius:var(--rl);overflow:hidden;background:var(--white);
       box-shadow:0 0 0 1px rgba(var(--ink-rgb),.07),0 30px 70px rgba(var(--ink-rgb),.09)}
     .svc5-card{position:relative;display:flex;flex-direction:column;transform:none;
@@ -498,7 +510,8 @@
         background:var(--yellow);margin-top:14px}
       .s-head.center .s-title::after{margin-left:auto;margin-right:auto}
       #servicios,#trabajos{background:var(--paper)}
-      .svc5-grid{grid-template-columns:1fr;gap:20px}
+      #servicios{padding-top:56px;padding-bottom:64px}
+      .svc5-grid{grid-template-columns:1fr;gap:20px;margin-top:28px}
       .svc5-card{border-radius:16px}
       .svc5-title{font-size:1.7rem}
       .svc5-photo{aspect-ratio:16/9}
@@ -610,12 +623,12 @@
 <!-- ══ QUÉ HACEMOS ══ -->
 <section id="servicios">
   <div class="wrap">
-    <div class="s-head reveal">
+    <div class="s-head services-heading">
       <div class="s-kicker">Qué hacemos</div>
       <h2 class="s-title">Un equipo para cada etapa</h2>
     </div>
     <div class="svc5-grid">
-      <div class="svc5-card reveal">
+      <div class="svc5-card">
         <div class="svc5-head"><span class="svc5-num">01</span><h3 class="svc5-title">Locales comerciales</h3></div>
         <div class="svc5-photo"><img src="assets/local-meloso-despues.png" alt="Local comercial renovado" loading="lazy"></div>
         <div class="svc5-body">
@@ -629,7 +642,7 @@
         </div>
         <p class="svc5-benefit">Renovamos locales que potencian tu negocio.</p>
       </div>
-      <div class="svc5-card reveal">
+      <div class="svc5-card">
         <div class="svc5-head"><span class="svc5-num">02</span><h3 class="svc5-title">Remodelaciones integrales</h3></div>
         <div class="svc5-photo"><img src="assets/remodelacion-casa-despues.png" alt="Remodelación integral de vivienda" loading="lazy"></div>
         <div class="svc5-body">
@@ -643,7 +656,7 @@
         </div>
         <p class="svc5-benefit">Transformamos tu casa en el lugar que siempre quisiste.</p>
       </div>
-      <div class="svc5-card reveal">
+      <div class="svc5-card">
         <div class="svc5-head"><span class="svc5-num">03</span><h3 class="svc5-title">Cocinas y baños</h3></div>
         <div class="svc5-photo"><img src="assets/cocina-despues.png" alt="Cocina renovada" loading="lazy"></div>
         <div class="svc5-body">
@@ -657,7 +670,7 @@
         </div>
         <p class="svc5-benefit">Ambientes con estilo, confort y funcionalidad.</p>
       </div>
-      <div class="svc5-card reveal">
+      <div class="svc5-card">
         <div class="svc5-head"><span class="svc5-num">04</span><h3 class="svc5-title">Arreglos e instalaciones</h3></div>
         <div class="svc5-photo"><img src="assets/real-plomeria-bano.jpg" alt="Arreglos e instalaciones" loading="lazy"></div>
         <div class="svc5-body">
@@ -671,7 +684,7 @@
         </div>
         <p class="svc5-benefit">Soluciones rápidas, con calidad garantizada.</p>
       </div>
-      <div class="svc5-card reveal">
+      <div class="svc5-card">
         <div class="svc5-head"><span class="svc5-num">05</span><h3 class="svc5-title">Obra y estructuras</h3></div>
         <div class="svc5-photo"><img src="assets/real-obra-estructura.jpg" alt="Obra y estructuras" loading="lazy"></div>
         <div class="svc5-body">
@@ -1255,6 +1268,12 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ── Servicios: encabezado con reveal temprano y discreto ──
+  const servicesHeadingIo = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); servicesHeadingIo.unobserve(e.target); } });
+  }, { threshold: 0.01, rootMargin: '0px 0px 18% 0px' });
+  document.querySelectorAll('.services-heading').forEach(el => servicesHeadingIo.observe(el));
 
   // ── Antes/Después sliders ──
   document.querySelectorAll('[data-ad]').forEach(el => {
