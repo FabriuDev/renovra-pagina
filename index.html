@@ -112,62 +112,41 @@
 
     /* ── HERO ── */
     .hero{background:var(--charcoal);padding:0}
-    .hero-split{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1.05fr;align-items:stretch;min-height:660px}
-    .hero-cut-accent{position:absolute;left:0;top:0;bottom:0;width:calc(100%/2.05);z-index:3;pointer-events:none;
-      background:var(--yellow);
-      clip-path:polygon(calc(100% - 4px) 0,100% 0,calc(100% - 48px) 100%,calc(100% - 52px) 100%)}
-    .hero-left{position:relative;overflow:hidden;z-index:2;display:flex;flex-direction:column;justify-content:center;
+    .hero-split{position:relative;display:grid;grid-template-columns:44% 56%;align-items:stretch;min-height:660px}
+    .hero-left{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;
       background:linear-gradient(160deg,#0B1016 0%,#20242C 58%,#0B1016 100%);
-      clip-path:polygon(0 0,100% 0,calc(100% - 48px) 100%,0 100%);
-      padding:76px clamp(84px,7vw,110px) 76px clamp(28px,6vw,88px)}
-    .hero-left::before{content:'';position:absolute;top:-25%;left:-15%;width:65%;height:80%;
-      background:radial-gradient(circle,rgba(217,154,0,.16) 0%,transparent 70%);pointer-events:none;
-      animation:heroBreathe 7s ease-in-out infinite}
-    .hero-left::after{content:'';position:absolute;bottom:-30%;right:-10%;width:50%;height:60%;
-      background:radial-gradient(circle,rgba(61,107,130,.14) 0%,transparent 70%);pointer-events:none}
+      border-right:3px solid var(--yellow);
+      padding:76px clamp(40px,4.6vw,64px) 76px clamp(28px,6vw,64px)}
+    .hero-left::before{content:'';position:absolute;top:-8%;left:6%;width:60%;height:65%;
+      background:radial-gradient(circle,rgba(217,154,0,.07) 0%,transparent 72%);pointer-events:none}
+    .hero-left::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+      background-image:radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:4px 4px}
     .hero-left>*{position:relative;z-index:1}
-    @keyframes heroBreathe{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
-    @media(prefers-reduced-motion:reduce){.hero-left::before{animation:none}}
-    .hero-rotator{display:flex;align-items:center;gap:10px;margin-bottom:18px;height:1.3em;overflow:hidden}
-    .hero-rotator-dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);flex-shrink:0;box-shadow:0 0 8px rgba(217,154,0,.6)}
-    .hero-rotator-text{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;
-      text-transform:uppercase;letter-spacing:.1em;color:var(--yellow-acc);
-      transition:opacity .45s ease,transform .45s ease}
-    .hero-rotator-text.swap{opacity:0;transform:translateY(10px)}
-    .hero-logo{font-family:'Big Shoulders Display',sans-serif;font-weight:900;
-      font-size:clamp(4rem,7vw,6.6rem);text-transform:uppercase;letter-spacing:.01em;
-      line-height:.92;margin-bottom:24px;filter:drop-shadow(0 3px 12px rgba(0,0,0,.6))}
-    .hero-logo span{display:inline-block;background-size:cover;background-position:center;
-      background-repeat:no-repeat;background-clip:text;-webkit-background-clip:text;
-      color:transparent;-webkit-text-fill-color:transparent}
-    .lg-renov{background-image:linear-gradient(rgba(214,214,208,.98),rgba(214,214,208,.98))}
-    .lg-ra{background-image:linear-gradient(rgba(217,154,0,.98),rgba(217,154,0,.98))}
-    .hero-h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.55rem;
-      text-transform:uppercase;letter-spacing:.02em;color:var(--white);margin-bottom:26px}
-    .hero-pills{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
-    .hero-pill{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;
-      background:#2F3336;border:1px solid #6B6F72;color:var(--white);font-family:'Barlow Condensed',sans-serif;
-      font-size:.9rem;font-weight:600;
-      text-transform:uppercase;letter-spacing:.03em;
-      box-shadow:0 6px 16px rgba(11,16,22,.35),inset 0 1px 0 rgba(255,255,255,.07)}
-    .hero-pill svg{width:16px;height:16px;stroke:var(--yellow);flex-shrink:0}
-    .hero-copy{font-size:1.18rem;line-height:1.62;color:var(--muted-d);max-width:480px;margin-bottom:34px}
-    .hero-copy-short{display:none}
-    .hero-copy em{display:block;margin-top:10px;font-family:'Inter',sans-serif;font-style:italic;font-weight:600;
-      font-size:1.3rem;color:var(--yellow-acc);line-height:1.4}
-    .hero-btn{width:380px;max-width:100%;padding:19px 32px;font-size:1.02rem;
-      transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease;
-      box-shadow:0 8px 20px rgba(217,154,0,.22)}
-    .hero-btn:hover{transform:translateY(-2px) scale(1.012);box-shadow:0 14px 30px rgba(217,154,0,.3)}
-    .hero-right{position:relative;overflow:hidden;min-height:320px;z-index:1;
-      margin-left:-48px;width:calc(100% + 48px)}
+    .hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.95rem;
+      text-transform:uppercase;letter-spacing:.14em;color:var(--yellow-acc);margin-bottom:18px}
+    .hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;
+      font-size:clamp(3.1rem,4.6vw,4.75rem);line-height:.98;color:var(--white);
+      max-width:580px;margin-bottom:22px}
+    .hero-sub{font-family:'Inter',sans-serif;font-weight:400;font-size:1.15rem;line-height:1.5;
+      color:var(--muted-d);max-width:480px;margin-bottom:32px}
+    .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:26px}
+    .hero-cta-main,.hero-cta-secondary{height:54px;padding:0 28px;font-size:.96rem}
+    .hero-cta-main{box-shadow:0 8px 20px rgba(217,154,0,.22);
+      transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease}
+    .hero-cta-main:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(217,154,0,.3)}
+    .hero-cta-secondary{background:transparent;color:var(--white);border:1px solid var(--cement-mid);
+      transition:background .2s,border-color .2s}
+    .hero-cta-secondary:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.45)}
+    .hero-trust{font-family:'Inter',sans-serif;font-weight:500;font-size:.86rem;color:var(--muted-d)}
+    .hero-trust span{color:var(--yellow);margin:0 9px;font-weight:700}
+    .hero-right{position:relative;overflow:hidden;min-height:320px}
     .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;
-      opacity:0;transition:opacity 1.8s ease}
-    .hero-slide.active{opacity:1;z-index:1;animation:heroKB 8s ease-in-out forwards}
-    @keyframes heroKB{from{transform:scale(1)}to{transform:scale(1.06)}}
+      opacity:0;transition:opacity 1s ease}
+    .hero-slide.active{opacity:1;z-index:1;animation:heroKB 9s ease-in-out forwards}
+    @keyframes heroKB{from{transform:scale(1)}to{transform:scale(1.035)}}
     @media(prefers-reduced-motion:reduce){.hero-slide.active{animation:none}}
-    .hero-right::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-      background:linear-gradient(100deg,rgba(11,16,22,.5) 0%,rgba(11,16,22,.16) 12%,transparent 26%)}
+    .hero-right::after{content:'';position:absolute;inset:0 auto 0 0;width:40px;z-index:2;pointer-events:none;
+      background:linear-gradient(90deg,rgba(11,16,22,.5),rgba(11,16,22,0))}
 
     /* ── FRANJA DE PRESUPUESTO (compacta, integrada al hero) ── */
     .pay-strip{position:relative;height:auto;min-height:0;background:var(--charcoal);padding:32px 0;
@@ -188,7 +167,6 @@
       letter-spacing:.01em;line-height:1.05;margin:0}
     .pay-title-line1{display:block;color:var(--white)}
     .pay-title-line2{display:block;color:var(--yellow);font-size:.92em}
-    .pt-short{display:none}
     .pay-microcopy{margin:9px 0 0;font-size:1rem;color:var(--white);line-height:1.45}
 
     .pay-panel{background:#171B21;border:1px solid rgba(107,111,114,.35);border-radius:14px;
@@ -418,14 +396,9 @@
         box-shadow:0 0 0 1px rgba(var(--ink-rgb),.07),0 16px 36px rgba(var(--ink-rgb),.08)}
       .svc5-card:hover{transform:translateY(-6px)}
       .hero-split{grid-template-columns:1fr 1fr;min-height:560px}
-      .hero-left{padding:96px 56px 56px clamp(24px,4vw,48px);clip-path:polygon(0 0,100% 0,calc(100% - 30px) 100%,0 100%)}
-      .hero-right{margin-left:-30px;width:calc(100% + 30px)}
-      .hero-cut-accent{width:50%;clip-path:polygon(calc(100% - 4px) 0,100% 0,calc(100% - 30px) 100%,calc(100% - 34px) 100%)}
-      .hero-logo{font-size:clamp(3rem,5.6vw,4.3rem)}
-      .hero-h2{font-size:1.28rem}
-      .hero-copy{font-size:1.05rem}
-      .hero-copy em{font-size:1.2rem}
-      .hero-btn{padding:18px 32px;font-size:1rem}
+      .hero-left{padding:96px 48px 56px clamp(24px,4vw,48px)}
+      .hero-title{font-size:clamp(2.6rem,5.2vw,3.6rem)}
+      .hero-sub{font-size:1.05rem}
       .pay-wrap{gap:36px}
       .foot-grid{grid-template-columns:1fr 1fr;gap:32px 24px}
     }
@@ -474,32 +447,21 @@
       nav{backdrop-filter:blur(3px)}
       nav.scrolled{backdrop-filter:blur(8px)}
       .hero-split{grid-template-columns:1fr;min-height:auto}
-      .hero-cut-accent{display:none}
-      .hero-left{order:1;padding:76px 20px 30px;clip-path:none;border-bottom:2px solid var(--yellow)}
-      .hero-left::before{width:50%;height:60%;opacity:.6}
-      .hero-left::after{display:none}
-      .hero-right{order:2;min-height:240px;max-height:280px;margin-left:0;width:100%}
-      .hero-logo{font-size:clamp(2.6rem,10.5vw,3.3rem);margin-bottom:14px}
-      .hero-rotator{margin-bottom:12px}
-      .hero-h2{font-size:1.1rem;margin-bottom:16px}
-      .hero-pills{margin-bottom:18px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
-        margin-left:-20px;margin-right:-20px;padding-left:20px;padding-right:20px}
-      .hero-pills::-webkit-scrollbar{display:none}
-      .hero-pill{font-size:.74rem;padding:9px 14px;flex-shrink:0;border-width:1px}
-      .hero-copy{font-size:1rem;max-width:none;margin-bottom:22px}
-      .hero-copy-full{display:none}
-      .hero-copy-short{display:inline}
-      .hero-copy em{font-size:1.05rem;margin-top:8px}
-      .hero-left .btn{width:100%}
-      .hero-btn{padding:17px 28px;font-size:1rem}
+      .hero-left{order:1;padding:76px 20px 30px;border-right:none;border-bottom:2px solid var(--yellow)}
+      .hero-left::before{width:70%;height:55%;opacity:.7}
+      .hero-right{order:2;min-height:260px;max-height:290px;width:100%}
+      .hero-eyebrow{font-size:.82rem;margin-bottom:12px}
+      .hero-title{font-size:clamp(2.4rem,10vw,3rem);line-height:1;max-width:none;margin-bottom:16px}
+      .hero-sub{font-size:1rem;max-width:none;margin-bottom:22px}
+      .hero-actions{flex-direction:column;align-items:stretch;gap:10px;margin-bottom:20px}
+      .hero-cta-main,.hero-cta-secondary{width:100%}
+      .hero-trust{font-size:.8rem}
       .pay-strip{padding:22px 0}
       .pay-strip::before{display:none}
       .pay-wrap{gap:18px}
       .pay-ic{width:44px;height:44px}
       .pay-ic svg{width:20px;height:20px}
       .pay-title{font-size:1.1rem}
-      .pt-full{display:none}
-      .pt-short{display:inline}
       .pay-title-line2{font-size:.8em;font-weight:600;margin-top:2px}
       .pay-microcopy{font-size:.86rem;margin-top:6px}
       .pay-panel{padding:14px}
@@ -596,75 +558,24 @@
 <section class="hero" id="inicio">
   <div class="hero-split">
     <div class="hero-left">
-      <h1 class="hero-logo"><span class="lg-renov">Renov</span><span class="lg-ra">ra</span></h1>
-      <div class="hero-h2">Hacemos todo en construcción</div>
-      <div class="hero-rotator" aria-hidden="true">
-        <span class="hero-rotator-dot"></span>
-        <span class="hero-rotator-text" id="heroRotator">Remodelaciones integrales</span>
+      <div class="hero-eyebrow">Construcción · Refacción · Remodelaciones</div>
+      <h1 class="hero-title">Renovamos casas, locales y ambientes de principio a fin.</h1>
+      <p class="hero-sub">Presupuesto claro, atención directa y seguimiento durante toda la obra.</p>
+      <div class="hero-actions">
+        <a class="btn btn-y hero-cta-main" href="https://wa.me/5491144101670?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20Renovra.%20Quisiera%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Solicitar presupuesto por WhatsApp
+        </a>
+        <a class="btn hero-cta-secondary" href="#trabajos">Ver trabajos reales</a>
       </div>
-      <div class="hero-pills">
-        <span class="hero-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
-          Obra
-        </span>
-        <span class="hero-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 5.4L19 9l-5.2 1.6L12 16l-1.8-5.4L5 9l5.2-1.6z"/></svg>
-          Terminaciones
-        </span>
-        <span class="hero-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          Pequeños arreglos
-        </span>
-      </div>
-      <p class="hero-copy">
-        <span class="hero-copy-full">Soluciones integrales en construcción,<br>
-        remodelación e instalaciones.<br>
-        Nos encargamos de todo,
-        <em>vos disfrutás el resultado.</em></span>
-        <span class="hero-copy-short">Soluciones integrales en construcción y remodelación.
-        <em>Vos disfrutás el resultado.</em></span>
-      </p>
-      <a class="btn btn-y btn-lg hero-btn" href="https://wa.me/5491144101670?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20Renovra.%20Quisiera%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Solicitar presupuesto por WhatsApp
-      </a>
+      <div class="hero-trust">CABA y GBA <span>·</span> Obras reales <span>·</span> Sin costos ocultos</div>
     </div>
-    <div class="hero-cut-accent" aria-hidden="true"></div>
     <div class="hero-right" aria-label="Fotos reales de obras de Renovra">
       <div class="hero-slide active" style="background-image:url('assets/remodelacion-casa-despues.png')"></div>
       <div class="hero-slide" style="background-image:url('assets/cocina-despues.png')"></div>
-      <div class="hero-slide" style="background-image:url('assets/local-despues.png')"></div>
+      <div class="hero-slide" style="background-image:url('assets/local-meloso-despues.png')"></div>
+      <div class="hero-slide" style="background-image:url('assets/real-obra-estructura.jpg')"></div>
       <div class="hero-slide" style="background-image:url('assets/bano-despues.png')"></div>
-    </div>
-  </div>
-
-  <!-- ══ FRANJA MODALIDADES DE PAGO (integrada) ══ -->
-  <div class="pay-strip">
-    <div class="wrap pay-wrap">
-      <div class="pay-head">
-        <div class="pay-ic">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/><path d="M8.5 12.2l2.1 2.1 5-5"/></svg>
-        </div>
-        <div>
-          <div class="pay-title">
-            <span class="pay-title-line1"><span class="pt-full">Contanos tu proyecto, por más pequeño que sea.</span><span class="pt-short">Contanos tu proyecto.</span></span>
-            <span class="pay-title-line2">Nos adaptamos a tu presupuesto.</span>
-          </div>
-          <div class="pay-microcopy">Tu consulta no molesta, te orientamos sin compromiso.</div>
-        </div>
-      </div>
-      <div class="pay-panel">
-        <div class="pay-tabs" id="pay-modes">
-          <button class="pay-tab active" data-mode="obra">Por obra</button>
-          <button class="pay-tab" data-mode="m2">Por metro cuadrado</button>
-          <button class="pay-tab" data-mode="jornada">Por jornada</button>
-        </div>
-        <p class="pay-panel-desc" id="pay-detail-text">Precio cerrado por el trabajo completo, de principio a fin.</p>
-        <a class="btn btn-y pay-panel-cta" id="pay-detail-btn" href="https://wa.me/5491144101670?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20Renovra.%20Me%20interesa%20presupuestar%20por%20obra%20completa%20%28precio%20cerrado%29." target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Consultar por WhatsApp
-        </a>
-      </div>
     </div>
   </div>
 </section>
@@ -756,6 +667,36 @@
     </div>
   </div>
 </section>
+
+<!-- ══ FRANJA MODALIDADES DE PAGO ══ -->
+<div class="pay-strip">
+  <div class="wrap pay-wrap">
+    <div class="pay-head">
+      <div class="pay-ic">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/><path d="M8.5 12.2l2.1 2.1 5-5"/></svg>
+      </div>
+      <div>
+        <div class="pay-title">
+          <span class="pay-title-line1">Contanos tu proyecto, por más pequeño que sea.</span>
+          <span class="pay-title-line2">Nos adaptamos a tu presupuesto.</span>
+        </div>
+        <div class="pay-microcopy">Tu consulta no molesta, te orientamos sin compromiso.</div>
+      </div>
+    </div>
+    <div class="pay-panel">
+      <div class="pay-tabs" id="pay-modes">
+        <button class="pay-tab active" data-mode="obra">Por obra</button>
+        <button class="pay-tab" data-mode="m2">Por metro cuadrado</button>
+        <button class="pay-tab" data-mode="jornada">Por jornada</button>
+      </div>
+      <p class="pay-panel-desc" id="pay-detail-text">Precio cerrado por el trabajo completo, de principio a fin.</p>
+      <a class="btn btn-y pay-panel-cta" id="pay-detail-btn" href="https://wa.me/5491144101670?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20Renovra.%20Me%20interesa%20presupuestar%20por%20obra%20completa%20%28precio%20cerrado%29." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- ══ TRABAJOS POR CATEGORÍA ══ -->
 <section id="trabajos">
@@ -1243,22 +1184,6 @@
       slides[cur].classList.add('active');
     }, 3200 + idx * 350);
   });
-
-  // ── Hero: línea de texto rotativa ──
-  (function(){
-    const el = document.getElementById('heroRotator');
-    if (!el) return;
-    const words = ['Remodelaciones integrales','Cocinas y baños','Locales comerciales','Arreglos e instalaciones','Obra y estructuras'];
-    let idx = 0;
-    setInterval(() => {
-      el.classList.add('swap');
-      setTimeout(() => {
-        idx = (idx + 1) % words.length;
-        el.textContent = words[idx];
-        el.classList.remove('swap');
-      }, 450);
-    }, 5000);
-  })();
 
   // ── Selector de modalidad de pago ──
   const payModes = {
