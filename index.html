@@ -195,7 +195,7 @@
     .pay-panel-cta{margin:14px 0 0;width:100%;min-height:48px;font-size:1rem}
 
     /* ── SERVICIOS ── */
-    #servicios{position:relative;background:var(--white);padding-top:72px;padding-bottom:88px}
+    #servicios{position:relative;background:var(--white);padding-top:72px;padding-bottom:0}
     #servicios::before{content:'';position:absolute;top:0;left:0;right:0;height:28px;pointer-events:none;
       background:linear-gradient(to bottom,rgba(11,16,22,.07),rgba(11,16,22,0))}
     #servicios .s-head{margin-bottom:0}
@@ -255,6 +255,79 @@
     }
     @media(prefers-reduced-motion:reduce){
       .svc5-card,.svc5-photo img,.svc5-head,.svc5-num,.svc5-benefit{transition:none;animation:none;transform:none}
+    }
+
+    /* ── TRABAJOS COMPLEMENTARIOS ── */
+    .complementary-service{background:var(--white);padding:0 0 72px}
+    .complementary-service-card{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+      align-items:stretch;margin-top:38px;background:#FAFAF7;border-radius:20px;overflow:hidden;
+      border:1px solid rgba(107,111,114,.22);
+      box-shadow:0 18px 44px rgba(11,16,22,.08),0 2px 8px rgba(11,16,22,.04);
+      transition:box-shadow .3s ease,border-color .3s ease}
+    .complementary-service-card::before{content:'';display:block;grid-column:1/-1;height:3px;
+      background:linear-gradient(90deg,var(--yellow) 0 64px,rgba(107,111,114,.4) 64px 100%)}
+    .complementary-service-content{padding:clamp(34px,4vw,54px);display:flex;flex-direction:column}
+    .cs-kicker{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.86rem;
+      text-transform:uppercase;letter-spacing:.1em;color:#D99A00;margin-bottom:12px}
+    .cs-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;
+      font-size:clamp(2.375rem,3.2vw,3.25rem);text-transform:uppercase;line-height:1;color:#0B1016;margin-bottom:14px}
+    .cs-desc{font-family:'Inter',sans-serif;font-size:1.05rem;line-height:1.55;color:#6B6F72;
+      max-width:520px;margin-bottom:24px}
+    .cs-selectors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:22px}
+    .cs-selector{-webkit-appearance:none;appearance:none;display:flex;align-items:center;gap:10px;
+      width:100%;text-align:left;padding:15px;border-radius:12px;background:var(--white);
+      border:1px solid rgba(107,111,114,.32);cursor:pointer;font:inherit;
+      transition:border-color .2s ease,background .2s ease}
+    .cs-selector-icon{width:20px;height:20px;stroke:#6B6F72;flex-shrink:0;transition:stroke .2s ease}
+    .cs-selector-label{font-family:'Inter',sans-serif;font-weight:600;font-size:.9rem;color:#0B1016}
+    .cs-selector.is-active{border-color:var(--yellow);background:rgba(217,154,0,.08)}
+    .cs-selector.is-active .cs-selector-icon{stroke:#D99A00}
+    .cs-selector:focus{outline:none}
+    .cs-selector:focus-visible{box-shadow:0 0 0 3px rgba(217,154,0,.4)}
+    .cs-active-desc{font-family:'Inter',sans-serif;font-size:.95rem;line-height:1.5;color:#6B6F72;margin-bottom:22px}
+    .cs-closing{display:flex;align-items:flex-start;gap:9px;font-family:'Inter',sans-serif;font-weight:600;
+      font-size:.95rem;line-height:1.4;color:#2F3336;margin-bottom:20px}
+    .cs-closing svg{width:18px;height:18px;stroke:#D99A00;flex-shrink:0;margin-top:1px}
+    .cs-cta{align-self:flex-start;min-height:52px;padding:0 26px;font-size:.95rem;background:#D99A00;color:#0B1016}
+    .complementary-service-media{position:relative}
+    .complementary-service-viewer{position:relative;aspect-ratio:4/3;min-height:100%;overflow:hidden;
+      background:#EDEDE8}
+    .cs-figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .38s ease;pointer-events:none}
+    .cs-figure.is-active{opacity:1;pointer-events:auto}
+    .cs-figure img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;
+      transition:transform .5s ease}
+    .cs-figure-tag{position:absolute;left:14px;bottom:14px;padding:5px 12px;border-radius:999px;
+      background:rgba(11,16,22,.78);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;
+      font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+    .cs-figure-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:12px;text-align:center;padding:24px;background:#EDEDE8}
+    .cs-figure-placeholder svg{width:34px;height:34px;stroke:#8A8E91}
+    .cs-figure-placeholder span{font-family:'Inter',sans-serif;font-size:.88rem;color:#6B6F72;max-width:220px}
+    @media(hover:hover) and (pointer:fine){
+      .cs-selector:hover{border-color:rgba(217,154,0,.5)}
+      .complementary-service-card:hover{border-color:rgba(107,111,114,.35);
+        box-shadow:0 22px 50px rgba(11,16,22,.1),0 3px 10px rgba(11,16,22,.05)}
+      .complementary-service-card:hover .cs-figure.is-active img{transform:scale(1.025)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .cs-figure,.cs-figure img,.complementary-service-card{transition:none!important}
+    }
+    @media(max-width:680px){
+      .complementary-service{padding-bottom:56px}
+      .complementary-service-card{grid-template-columns:1fr;margin-top:28px}
+      .complementary-service-content{display:contents}
+      .complementary-service-media{display:contents}
+      .cs-kicker{order:1;padding:22px 22px 0}
+      .cs-title{order:2;padding:0 22px}
+      .cs-desc{order:3;padding:0 22px}
+      .cs-selectors{order:4;padding:0 22px;grid-template-columns:repeat(2,1fr)}
+      .complementary-service-viewer{order:5}
+      .cs-active-desc{order:6;padding:0 22px;margin-top:18px}
+      .cs-closing{order:7;padding:0 22px}
+      .cs-cta{order:8;width:calc(100% - 44px);margin:0 22px 22px;justify-content:center}
+    }
+    @media(max-width:360px){
+      .cs-selectors{grid-template-columns:1fr}
     }
 
 
@@ -510,7 +583,7 @@
         background:var(--yellow);margin-top:14px}
       .s-head.center .s-title::after{margin-left:auto;margin-right:auto}
       #servicios,#trabajos{background:var(--paper)}
-      #servicios{padding-top:56px;padding-bottom:64px}
+      #servicios{padding-top:56px;padding-bottom:0}
       .svc5-grid{grid-template-columns:1fr;gap:20px;margin-top:28px}
       .svc5-card{border-radius:16px}
       .svc5-title{font-size:1.7rem}
@@ -701,6 +774,76 @@
         <p class="svc5-benefit">Construimos con seguridad y a tu medida.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══ TRABAJOS COMPLEMENTARIOS ══ -->
+<section class="complementary-service">
+  <div class="wrap">
+    <article class="complementary-service-card">
+      <div class="complementary-service-content">
+        <div class="cs-kicker">Servicios que completan la obra</div>
+        <h3 class="cs-title">Trabajos complementarios</h3>
+        <p class="cs-desc">Coordinamos soluciones a medida para que no tengas que buscar distintos proveedores durante la obra.</p>
+        <div class="cs-selectors" role="tablist" aria-label="Especialidades de trabajos complementarios">
+          <button type="button" class="cs-selector" data-service="herreria" data-label="Herrería de obra"
+            data-desc="Rejas, portones, barandas, refuerzos y estructuras metálicas."
+            role="tab" aria-selected="false" aria-controls="cs-panel-herreria" id="cs-tab-herreria" tabindex="-1">
+            <svg class="cs-selector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16M9 4v16M14 4v16M19 4v16"/><path d="M2 8h20M2 16h20"/></svg>
+            <span class="cs-selector-label">Herrería de obra</span>
+          </button>
+          <button type="button" class="cs-selector" data-service="aluminio" data-label="Carpintería de aluminio"
+            data-desc="Ventanas, puertas, cerramientos, divisores y soluciones con perfilería."
+            role="tab" aria-selected="false" aria-controls="cs-panel-aluminio" id="cs-tab-aluminio" tabindex="-1">
+            <svg class="cs-selector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 12h18"/></svg>
+            <span class="cs-selector-label">Carpintería de aluminio</span>
+          </button>
+          <button type="button" class="cs-selector is-active" data-service="cocina" data-label="Muebles de cocina"
+            data-desc="Bajo mesadas, alacenas, frentes, cajoneras y muebles adaptados al espacio."
+            role="tab" aria-selected="true" aria-controls="cs-panel-cocina" id="cs-tab-cocina" tabindex="0">
+            <svg class="cs-selector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 10h16M4 16h16"/><path d="M8 6.5h2M8 13h2M8 19h2"/></svg>
+            <span class="cs-selector-label">Muebles de cocina</span>
+          </button>
+          <button type="button" class="cs-selector" data-service="placares" data-label="Placares a medida"
+            data-desc="Interiores, frentes corredizos, estantes, cajoneras y mejor aprovechamiento del guardado."
+            role="tab" aria-selected="false" aria-controls="cs-panel-placares" id="cs-tab-placares" tabindex="-1">
+            <svg class="cs-selector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a2 2 0 012 2c0 1-1 1.5-2 2"/><path d="M12 7l9 6H3l9-6z"/><path d="M3 17h18"/></svg>
+            <span class="cs-selector-label">Placares a medida</span>
+          </button>
+        </div>
+        <p class="cs-active-desc" id="cs-active-desc" aria-live="polite">Bajo mesadas, alacenas, frentes, cajoneras y muebles adaptados al espacio.</p>
+        <p class="cs-closing">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          Un solo equipo para coordinar obra, fabricación, instalación y terminaciones.
+        </p>
+        <a class="btn btn-y cs-cta" id="cs-cta" href="https://wa.me/5491144101670?text=Hola%20Renovra%2C%20quisiera%20consultar%20por%20trabajos%20complementarios.%20Me%20interesa%3A%20Muebles%20de%20cocina." target="_blank" rel="noopener" aria-label="Consultar trabajos complementarios por WhatsApp">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar trabajos complementarios
+        </a>
+      </div>
+      <div class="complementary-service-media">
+        <div class="complementary-service-viewer">
+          <figure class="cs-figure" data-service="herreria" id="cs-panel-herreria" role="tabpanel" aria-labelledby="cs-tab-herreria">
+            <div class="cs-figure-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.2"/><path d="M8 7l1.5-3h5L16 7"/></svg>
+              <span>Fotografía de trabajo disponible próximamente.</span>
+            </div>
+          </figure>
+          <figure class="cs-figure" data-service="aluminio" id="cs-panel-aluminio" role="tabpanel" aria-labelledby="cs-tab-aluminio">
+            <img src="assets/complementarios-aluminio-detalle.jpg" alt="Detalle de mueble con perfilería de aluminio, bisagras y pistones a la vista" loading="lazy">
+            <span class="cs-figure-tag">Resultado terminado</span>
+          </figure>
+          <figure class="cs-figure is-active" data-service="cocina" id="cs-panel-cocina" role="tabpanel" aria-labelledby="cs-tab-cocina">
+            <img src="assets/complementarios-cocina-proceso.jpg" alt="Instalación de mueble bajo mesada de cocina en obra" loading="lazy">
+            <span class="cs-figure-tag">Proceso real</span>
+          </figure>
+          <figure class="cs-figure" data-service="placares" id="cs-panel-placares" role="tabpanel" aria-labelledby="cs-tab-placares">
+            <img src="assets/complementarios-placard-proceso.jpg" alt="Instalación del panel corredizo de un placar a medida" loading="lazy">
+            <span class="cs-figure-tag">Proceso real</span>
+          </figure>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -1236,6 +1379,42 @@
       slides[cur].classList.add('active');
     }, 3200 + idx * 350);
   });
+
+  // ── Trabajos complementarios: selector de especialidad ──
+  (function(){
+    const selectors = [...document.querySelectorAll('.cs-selector')];
+    const figures = [...document.querySelectorAll('.cs-figure')];
+    const activeDesc = document.getElementById('cs-active-desc');
+    const cta = document.getElementById('cs-cta');
+    if (!selectors.length || !cta) return;
+
+    function activate(btn, focusIt) {
+      selectors.forEach(b => {
+        const isThis = b === btn;
+        b.classList.toggle('is-active', isThis);
+        b.setAttribute('aria-selected', isThis ? 'true' : 'false');
+        b.tabIndex = isThis ? 0 : -1;
+      });
+      figures.forEach(f => f.classList.toggle('is-active', f.dataset.service === btn.dataset.service));
+      activeDesc.textContent = btn.dataset.desc;
+      cta.href = 'https://wa.me/5491144101670?text=' + encodeURIComponent(
+        'Hola Renovra, quisiera consultar por trabajos complementarios. Me interesa: ' + btn.dataset.label + '.'
+      );
+      if (focusIt) btn.focus();
+    }
+
+    selectors.forEach((btn, i) => {
+      btn.addEventListener('click', () => activate(btn, false));
+      btn.addEventListener('keydown', e => {
+        const keys = ['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'];
+        if (!keys.includes(e.key)) return;
+        e.preventDefault();
+        const dir = (e.key === 'ArrowRight' || e.key === 'ArrowDown') ? 1 : -1;
+        const next = selectors[(i + dir + selectors.length) % selectors.length];
+        activate(next, true);
+      });
+    });
+  })();
 
   // ── Selector de modalidad de pago ──
   const payModes = {
