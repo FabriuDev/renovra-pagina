@@ -137,6 +137,9 @@
       font-size:clamp(3.625rem,5vw,5.125rem);line-height:.94;letter-spacing:-.025em;color:var(--white);
       max-width:600px;margin-bottom:22px}
     .hero-title-acc{color:var(--yellow-acc)}
+    .hero-title-inner{display:inline;transition:opacity .45s ease,transform .45s ease}
+    .hero-title-inner.swap{opacity:0;transform:translateY(10px)}
+    @media(prefers-reduced-motion:reduce){.hero-title-inner{transition:none}}
     .hero-sub{font-family:'Inter',sans-serif;font-weight:400;font-size:1.15rem;line-height:1.5;
       color:var(--muted-d);max-width:480px;margin-bottom:32px}
     .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:26px}
@@ -668,7 +671,7 @@
         <span class="hero-context-dot"></span>
         <span class="hero-context-text" id="heroContext">Remodelaciones integrales</span>
       </div>
-      <h1 class="hero-title hero-fade" style="--d:.16s">Renovamos tu espacio <span class="hero-title-acc">de principio a fin.</span></h1>
+      <h1 class="hero-title hero-fade" style="--d:.16s"><span class="hero-title-inner" id="heroTitleInner">Renovamos tu espacio <span class="hero-title-acc">de principio a fin.</span></span></h1>
       <p class="hero-sub hero-fade" style="--d:.26s">Casas y locales con presupuesto claro, coordinación completa y seguimiento directo.</p>
       <div class="hero-actions hero-fade" style="--d:.34s">
         <a class="btn btn-y hero-cta-main" href="https://wa.me/5491144101670?text=Hola%2C%20me%20comunico%20desde%20la%20web%20de%20Renovra.%20Quisiera%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">
@@ -1348,6 +1351,29 @@
         el.classList.remove('swap');
       }, 500);
     }, 6000);
+  })();
+
+  // ── Hero: título rotativo (frases humanas por servicio, fade sin typing effect) ──
+  (function(){
+    const el = document.getElementById('heroTitleInner');
+    if (!el) return;
+    const phrases = [
+      'Renovamos tu espacio <span class="hero-title-acc">de principio a fin.</span>',
+      'Esa cocina o baño viejo, <span class="hero-title-acc">ya tiene solución.</span>',
+      'Tu local parado <span class="hero-title-acc">lo abrimos a tiempo.</span>',
+      'Ese arreglo pendiente <span class="hero-title-acc">lo resolvemos ya.</span>',
+      'Tu obra o estructura, <span class="hero-title-acc">con oficio real.</span>',
+      'Tu casa vieja, <span class="hero-title-acc">transformación completa.</span>'
+    ];
+    let idx = 0;
+    setInterval(() => {
+      el.classList.add('swap');
+      setTimeout(() => {
+        idx = (idx + 1) % phrases.length;
+        el.innerHTML = phrases[idx];
+        el.classList.remove('swap');
+      }, 450);
+    }, 5500);
   })();
 
   // ── Hero: rotación de fotos (crossfade + Ken Burns) ──
